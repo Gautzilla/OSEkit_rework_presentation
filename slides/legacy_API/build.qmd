@@ -1,0 +1,54 @@
+
+
+```{.python code-line-numbers="3,4,7|9" style="margin-bottom:50px;"}
+from OSmOSE import Dataset
+
+dataset = Dataset(
+    dataset_path = r"C:\Users\berthoga\Documents\Datasets\small_dataset",
+    gps_coordinates = (0,0),
+    depth = 0,
+)
+
+dataset.build(date_template = r"%y%m%d%H%M%S", force_upload=True)
+```
+
+. . .
+
+:::{.columns}
+
+:::{.column width="50%"}
+
+:::{.center style="font-size: 60%;"}
+
+```{.html}
+dataset
+├── 7189.230405154906.wav
+├── 7189.230405164906.wav
+├── 7189.230405174906.wav
+└── 7189.230405194906.wav
+```
+:::
+
+:::
+
+:::{.column width="50%"}
+
+:::{style="font-size: 60%;"}
+```{.html code-line-numbers="1-8|1-4,9-11"}
+dataset
+└── data
+    └── audio
+        └── 3600_128000
+            ├── 7189.230405154906.wav
+            ├── 7189.230405164906.wav
+            ├── 7189.230405174906.wav
+            ├── 7189.230405194906.wav    
+            ├── file_metadata.csv
+            ├── metadata.csv
+            └── timestamp.csv
+```
+:::
+
+:::
+
+:::

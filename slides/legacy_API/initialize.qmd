@@ -1,0 +1,64 @@
+
+
+```{.python code-line-numbers="3-5|7,8|10-12" style="margin-bottom:50px;"}
+from OSmOSE import Spectrogram
+
+dataset = Spectrogram(
+    dataset_path = r"C:\Users\berthoga\Documents\Datasets\small_dataset"
+)
+
+dataset.spectro_duration = 10
+dataset.dataset_sr = 64_000
+
+dataset.initialize(datetime_end="2023-04-05T15:50:06.000+0000")
+```
+
+. . .
+
+:::{.columns}
+
+:::{.column width="50%"}
+
+:::{.center style="font-size: 60%;"}
+
+```{.html}
+dataset
+└── data
+    └── audio
+        └── 3600_128000
+            ├── 7189.230405154906.wav
+            ├── 7189.230405164906.wav
+            ├── 7189.230405174906.wav
+            ├── 7189.230405194906.wav    
+            ├── file_metadata.csv
+            ├── metadata.csv
+            └── timestamp.csv
+```
+:::
+
+:::
+
+:::{.column width="50%"}
+
+:::{style="font-size: 60%;"}
+```{.html code-line-numbers="1-5|1-3,6-12|1-3,13,14"}
+dataset
+└── data
+    └── audio
+        ├── 3600_128000
+        │   └── ...
+        └── 10_64000
+            ├── 2023_04_05_15_49_06.wav
+            ├── 2023_04_05_15_49_16.wav
+            ├── 2023_04_05_15_49_26.wav
+            ├── 2023_04_05_15_49_36.wav
+            ├── 2023_04_05_15_49_46.wav
+            ├── 2023_04_05_15_49_56.wav
+            ├── metadata.csv
+            └── timestamp.csv
+```
+:::
+
+:::
+
+:::

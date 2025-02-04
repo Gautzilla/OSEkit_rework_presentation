@@ -1,0 +1,83 @@
+---
+title: OSEkit
+subtitle: présentation de la nouvelle API
+format: 
+    revealjs:
+        incremental: true
+        transition: slide
+        theme: [default, theme.scss]
+filters:
+    - pyodide
+---
+
+# OSmOSE
+
+{{< include slides/osmose.qmd >}}
+
+# OSEkit
+
+{{< include slides/objectif.qmd >}}
+
+## Utilisation
+
+{{< include slides/utilisation_osekit.qmd >}}
+
+# Public API (legacy)
+
+##
+
+{{< include slides/legacy_API/presentation.qmd >}}
+
+## Build
+
+{{< include slides/legacy_API/build.qmd >}}
+
+## Initialize
+
+{{< include slides/legacy_API/initialize.qmd >}}
+
+## Generate
+
+{{< include slides/legacy_API/generate.qmd >}}
+
+# Core API (prototype)
+
+{{< include slides/core_API/presentation.qmd >}}
+
+## Architecture {auto-animate=true}
+
+```{mermaid}
+classDiagram
+    direction LR
+    Item "*" --> "1" File
+    Data "*" --> "*" Item
+    class File{
+        +Path path
+        +Timestamp begin
+        +Timestamp end
+        +float sample_rate
+        +read(start,stop)
+    }
+    class Item{
+        +File file
+        +Timestamp begin
+        +Timestamp end
+        +get_value()
+    }
+    class Data{
+        +list~Item~ items
+        +float sample_rate
+        +bool is_wild
+        +get_value()
+        +from_files(list~File~,start,stop)$ Data
+    }
+```
+
+::: {.r-stack}
+![](media\file_item_data_0.svg){.fragment fig-align=center}
+
+![](media\file_item_data_1.svg){.fragment fig-align=center}
+
+![](media\file_item_data_2.svg){.fragment fig-align=center}
+:::
+

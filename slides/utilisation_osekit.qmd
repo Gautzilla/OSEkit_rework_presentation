@@ -1,0 +1,29 @@
+:::: {.columns}
+
+
+::: {.column width="45%" .primary}
+:::{.r-stack}
+**Public API**
+:::
+
+- Opérations simplifiées
+- Travail à l'échelle du dataset
+- Pensée pour les utilisateurs non codeurs
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="45%" .secondary}
+:::{.r-stack}
+**Core API**
+::: 
+
+- Plus bas niveau
+- Manipulation directe des objets
+- Liberté d'action
+
+:::
+
+::::

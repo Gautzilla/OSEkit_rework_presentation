@@ -1,0 +1,9 @@
+	2025-02-03 11:00:12,252 - dataset.small_dataset - DEBUG
+Creating timestamps.csv file from C:\Users\berthoga\Documents\Datasets\small_dataset\data\audio\3600_128000\timestamp.csv
+
+	2025-02-03 11:00:12,358 - dataset.small_dataset - INFO
+Moved 9 file(s) to the 'other' folder.
+
+	2025-02-03 11:00:12,359 - dataset.small_dataset - INFO
+DONE ! your dataset is on OSmOSE platform !
+

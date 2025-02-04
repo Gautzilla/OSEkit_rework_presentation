@@ -1,0 +1,50 @@
+- Pas de workflow standard:
+    - `datarmor_toolkit.generate_spectro` helper (serveur)
+    - `Spectrogram.process_all_files` (nécessite de filtrer des fichiers à a main)
+
+. . .
+
+:::{.columns}
+
+:::{.column width="50%"}
+
+:::{.center style="font-size: 60%;"}
+
+```{.html}
+dataset
+└── data
+    └── audio
+        ├── 3600_128000
+        │   └── ...
+        └── 10_64000
+            └── ...
+```
+:::
+
+:::
+
+:::{.column width="50%"}
+
+:::{style="font-size: 60%;"}
+```{.html code-line-numbers="1,4-11|1,4-7,12-15"}
+dataset
+├── data
+│   └── ...
+└── processed
+    └── spectrogram
+        └── 10_640000
+            └── 1024_1024_0.9_linear
+                ├── image
+                │   ├── 2023_04_05_15_49_06_1_0.png
+                │   ├── 2023_04_05_15_49_16_1_0.png
+                │   └── ...
+                └── matrix
+                    ├── 2023_04_05_15_49_06_1_0.npz
+                    ├── 2023_04_05_15_49_16_1_0.npz
+                    └── ...
+```
+:::
+
+:::
+
+:::

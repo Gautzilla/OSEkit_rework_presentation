@@ -1,0 +1,192 @@
+## Objectif {auto-animate=true}
+
+```{mermaid}
+flowchart LR
+  raw("`**Raw audio**`"
+  <br>
+  begin = b1
+  end = e1
+  file duration = d1
+  sample rate = sr1
+  ...
+  ) 
+  style raw color:#4ae4ff
+```
+
+## Objectif {auto-animate=true}
+
+```{mermaid}
+flowchart LR
+  raw("`**Raw audio**`"
+  <br>
+  begin = b1
+  end = e1
+  file duration = d1
+  sample rate = sr1
+  ...
+  ) 
+  --> 
+  processed("`**Processed audio**`"
+  <br>
+  begin = b2
+  end = e2
+  file duration = d2
+  sample rate = sr2
+  ...
+  ) 
+  style raw color:#4ae4ff
+  style processed color:#82ff9b
+```
+
+## Objectif {auto-animate=true}
+
+```{mermaid}
+flowchart LR
+  raw("`**Raw audio**`"
+  <br>
+  begin = b1
+  end = e1
+  file duration = d1
+  sample rate = sr1
+  ...
+  ) 
+  --> 
+  processed("`**Processed audio**`"
+  <br>
+  begin = b2
+  end = e2
+  file duration = d2
+  sample rate = sr2
+  ...
+  ) 
+  -->
+  FFT((FFT))
+  -->
+  spectro("`**Spectrogram**`"
+  <br>
+  begin = b2
+  end = e2
+  duration = d2
+  sample rate = sr2
+  fft parameters
+  ...
+  ) 
+
+  style raw color:#4ae4ff
+  style processed color:#82ff9b
+  style spectro color:#82ff9b
+  style FFT stroke-width:1px,stroke-dasharray: 10, color: #82ff9b
+```
+
+## Objectif {auto-animate=true}
+
+```{mermaid}
+flowchart LR
+  raw("`**Raw audio**`"
+  <br>
+  begin = b1
+  end = e1
+  file duration = d1
+  sample rate = sr1
+  ...
+  ) 
+  --> 
+  processed("`**Processed audio**`"
+  <br>
+  begin = b2
+  end = e2
+  file duration = d2
+  sample rate = sr2
+  ...
+  ) 
+  -->
+  FFT((FFT))
+  -->
+  spectro("`**Spectrogram**`"
+  <br>
+  begin = b2
+  end = e2
+  duration = d2
+  sample rate = sr2
+  fft parameters
+  ...
+  ) 
+  ---
+  aplose("`**APLOSE**`") 
+
+  style raw color:#4ae4ff
+  style processed color:#82ff9b
+  style spectro color:#82ff9b
+  style FFT stroke-width:1px,stroke-dasharray: 10, color: #82ff9b
+```
+
+
+## Objectif {auto-animate=true}
+
+```{mermaid}
+flowchart LR
+  raw("`**Raw audio**`"
+  <br>
+  begin = b1
+  end = e1
+  file duration = d1
+  sample rate = sr1
+  ...
+  ) 
+  --> 
+  processed("`**Processed audio**`"
+  <br>
+  begin = b2
+  end = e2
+  file duration = d2
+  sample rate = sr2
+  ...
+  ) 
+  -->
+  FFT((FFT))
+  -->
+  spectro("`**Spectrogram**`"
+  <br>
+  begin = b2
+  end = e2
+  duration = d2
+  sample rate = sr2
+  fft parameters
+  ...
+  ) 
+  ---
+  aplose("`**APLOSE**`") 
+
+  raw
+  --> 
+  processed2("`**Processed audio**`"
+  <br>
+  begin = b3
+  end = e3
+  file duration = d3
+  sample rate = sr3
+  ...
+  ) 
+  ---
+  FFT2((FFT2))
+  -->
+  spectro2("`**Spectrogram**`"
+  <br>
+  begin = b3
+  end = e3
+  duration = d3
+  sample rate = sr3
+  fft2 parameters
+  ...
+  ) 
+  --> 
+  aplose
+
+  style raw color:#4ae4ff
+  style processed color:#82ff9b
+  style spectro color:#82ff9b
+  style FFT stroke-width:1px,stroke-dasharray: 10, color: #82ff9b
+  style processed2 color:#dc82ff
+  style spectro2 color:#dc82ff
+  style FFT2 stroke-width:1px,stroke-dasharray: 10, color: #dc82ff
+```

@@ -1,0 +1,11 @@
+## Objectifs {auto-animate=true}
+
+- Accès à la donnée audio basée sur des **timestamps**
+- Découplage [fichier audio]{.primary} / [donnée audio]{.secondary}
+- Manipulation transparante de donnée [audio]{.primary} et [auxiliaire]{.secondary}
+
+## Objectifs {auto-animate=true}
+
+- Manipuler des [pointeurs]{.primary} vers l'audio plutôt que l'[audio direct]{.secondary}
+- Requêter l'audio **au besoin**
+- Objets à **responsabilité unique**

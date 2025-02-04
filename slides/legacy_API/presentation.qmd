@@ -1,0 +1,22 @@
+Version *legacy*:
+
+- Ancienne version d'**OSEkit**
+- Ne fait *pour l'instant* pas appel à la **Core API**
+- Pas très **SOLID**
+- *Helpers* sur un repo `datarmor-toolik`
+
+. . .
+
+=> Doit être réécrite rapidement
+
+##
+
+Fonctionne en **3 étapes**:
+
+::: {.small-table style="display: flex; justify-content: center; align-items: center; height: 80%;"}
+|**Build**|**Initialize**|**Generate**|
+|:---|:---|:---|
+|<br>Analyse l'audio<br>Classe l'audio<br>Crée des csv de métadonnée|<br>Découpe l'audio<br>Rééchantillonne l'audio|<br>Calcule les fft<br>Exporte les spectrogrammes|
+
+: {tbl-colwidths="[33,33,33]"}
+:::

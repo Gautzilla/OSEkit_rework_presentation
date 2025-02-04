@@ -1,0 +1,47 @@
+## OSmOSE = OSEkit + APLOSE
+
+:::: {.columns}
+
+::: {.column width="45%"}
+:::{.r-stack}
+**OSEkit**
+::: 
+
+:::{.primary}
+- Package Python
+- Pré-traitement audio
+- Calcul / Export de spectrogramme
+:::
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="45%"}
+:::{.r-stack}
+**APLOSE**
+:::
+
+:::{.secondary}
+- Plateforme web
+- Annotation de spectrogrammes
+:::
+
+:::
+
+::::
+
+
+## OSmOSE
+
+:::{.r-stack}
+- Open-source
+- Travail à l'échelle d'un **dataset**
+    - Données
+        - Audio
+        - Auxiliaires (GPS, météo...)
+    - Métadonnées
+        - Capteur
+        - Déploiement
+:::
