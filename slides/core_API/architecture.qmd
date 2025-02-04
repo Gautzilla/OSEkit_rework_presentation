@@ -1,0 +1,34 @@
+## Architecture
+```{mermaid}
+classDiagram
+    direction LR
+    Item "*" --> "1" File
+    Data "*" --> "*" Item
+    class File{
+        +Path path
+        +Timestamp begin
+        +Timestamp end
+        +float sample_rate
+        +read(start,stop)
+    }
+    class Item{
+        +File file
+        +Timestamp begin
+        +Timestamp end
+        +get_value()
+    }
+    class Data{
+        +list~Item~ items
+        +float sample_rate
+        +get_value()
+        +from_files(list~File~,start,stop)$ Data
+    }
+```
+
+::: {.r-stack}
+![](media\file_item_data_0.svg){.fragment fig-align=center}
+
+![](media\file_item_data_1.svg){.fragment fig-align=center}
+
+![](media\file_item_data_2.svg){.fragment fig-align=center}
+:::

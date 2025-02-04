@@ -1,3 +1,5 @@
+## Generate
+
 - Pas de workflow standard:
     - `datarmor_toolkit.generate_spectro` helper (serveur)
     - `Spectrogram.process_all_files` (nécessite de filtrer des fichiers à a main)

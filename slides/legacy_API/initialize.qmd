@@ -1,4 +1,4 @@
-
+## Initialize
 
 ```{.python code-line-numbers="3-5|7,8|10-12" style="margin-bottom:50px;"}
 from OSmOSE import Spectrogram
