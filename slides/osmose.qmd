@@ -39,8 +39,8 @@
 - Open-source
 - Travail à l'échelle d'un **dataset**
     - Données
-        - Audio
-        - Auxiliaires (GPS, météo...)
+        - [Audio]{.primary}
+        - [Auxiliaires]{.secondary} (GPS, météo...)
     - Métadonnées
         - Capteur
         - Déploiement

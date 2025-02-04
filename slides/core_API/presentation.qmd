@@ -7,5 +7,5 @@
 ## Objectifs {auto-animate=true}
 
 - Manipuler des [pointeurs]{.primary} vers l'audio plutôt que l'[audio direct]{.secondary}
-- Requêter l'audio **au besoin**
+- [Requêter]{.primary} / [traiter]{.secondary} l'audio **au besoin**
 - Objets à **responsabilité unique**

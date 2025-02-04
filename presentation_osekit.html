@@ -93,7 +93,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="presentation_osekit_files/libs/revealjs/dist/theme/quarto-7ba41f6a11743e48d7af6e91f51a1042.css">
+  <link rel="stylesheet" href="presentation_osekit_files/libs/revealjs/dist/theme/quarto-e22f39add250fbb521ece89122ef8664.css">
   <link href="presentation_osekit_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_osekit_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_osekit_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -243,8 +243,8 @@
 <ul>
 <li class="fragment">Données
 <ul>
-<li class="fragment">Audio</li>
-<li class="fragment">Auxiliaires (GPS, météo…)</li>
+<li class="fragment"><span class="primary">Audio</span></li>
+<li class="fragment"><span class="secondary">Auxiliaires</span> (GPS, météo…)</li>
 </ul></li>
 <li class="fragment">Métadonnées
 <ul>
@@ -260,7 +260,7 @@
 <h1>OSEkit</h1>
 
 </section>
-<section id="objectif" class="slide level2" data-auto-animate="true">
+<section id="objectif" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-out">
 <h2 data-id="quarto-animate-title">Objectif</h2>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -268,7 +268,7 @@
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-  raw("`**Raw audio**`"
+  raw(**Raw audio**
   &lt;br&gt;
   begin = b1
   end = e1
@@ -276,32 +276,8 @@
   sample rate = sr1
   ...
   ) 
-  style raw color:#4ae4ff
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="objectif-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Objectif</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  raw("`**Raw audio**`"
-  &lt;br&gt;
-  begin = b1
-  end = e1
-  file duration = d1
-  sample rate = sr1
-  ...
-  ) 
-  --&gt; 
-  processed("`**Processed audio**`"
+  ~~~
+  processed(Processed audio
   &lt;br&gt;
   begin = b2
   end = e2
@@ -309,44 +285,10 @@
   sample rate = sr2
   ...
   ) 
-  style raw color:#4ae4ff
-  style processed color:#82ff9b
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="objectif-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Objectif</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  raw("`**Raw audio**`"
-  &lt;br&gt;
-  begin = b1
-  end = e1
-  file duration = d1
-  sample rate = sr1
-  ...
-  ) 
-  --&gt; 
-  processed("`**Processed audio**`"
-  &lt;br&gt;
-  begin = b2
-  end = e2
-  file duration = d2
-  sample rate = sr2
-  ...
-  ) 
-  --&gt;
+  ~~~
   FFT((FFT))
-  --&gt;
-  spectro("`**Spectrogram**`"
+  ~~~
+  spectro(Spectrogram
   &lt;br&gt;
   begin = b2
   end = e2
@@ -355,11 +297,42 @@
   fft parameters
   ...
   ) 
+  ~~~
+  aplose(APLOSE) 
+
+  raw
+  ~~~
+  processed2(Processed audio
+  &lt;br&gt;
+  begin = b3
+  end = e3
+  file duration = d3
+  sample rate = sr3
+  ...
+  ) 
+  ~~~
+  FFT2((FFT2))
+  ~~~
+  spectro2(Spectrogram
+  &lt;br&gt;
+  begin = b3
+  end = e3
+  duration = d3
+  sample rate = sr3
+  fft2 parameters
+  ...
+  ) 
+  ~~~
+  aplose
 
   style raw color:#4ae4ff
-  style processed color:#82ff9b
-  style spectro color:#82ff9b
-  style FFT stroke-width:1px,stroke-dasharray: 10, color: #82ff9b
+  style processed color:#0000,opacity:0%
+  style spectro color:#0000,opacity:0%
+  style FFT opacity:0%,color:#0000
+  style processed2 opacity:0%,color:#0000
+  style spectro2 opacity:0%,color:#0000
+  style FFT2 opacity:0%,color:#0000
+  style aplose color:#0000,opacity:0%
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -367,7 +340,7 @@
 </div>
 </div>
 </section>
-<section id="objectif-3" class="slide level2" data-auto-animate="true">
+<section id="objectif-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-out">
 <h2 data-id="quarto-animate-title">Objectif</h2>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -375,7 +348,7 @@
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-  raw("`**Raw audio**`"
+  raw(**Raw audio**
   &lt;br&gt;
   begin = b1
   end = e1
@@ -383,8 +356,88 @@
   sample rate = sr1
   ...
   ) 
-  --&gt; 
-  processed("`**Processed audio**`"
+  --&gt;
+  processed(**Processed audio**
+  &lt;br&gt;
+  begin = b2
+  end = e2
+  file duration = d2
+  sample rate = sr2
+  ...
+  ) 
+  ~~~
+  FFT((FFT))
+  ~~~
+  spectro(Spectrogram
+  &lt;br&gt;
+  begin = b2
+  end = e2
+  duration = d2
+  sample rate = sr2
+  fft parameters
+  ...
+  ) 
+  ~~~
+  aplose(APLOSE) 
+
+  raw
+  ~~~
+  processed2(Processed audio
+  &lt;br&gt;
+  begin = b3
+  end = e3
+  file duration = d3
+  sample rate = sr3
+  ...
+  ) 
+  ~~~
+  FFT2((FFT2))
+  ~~~
+  spectro2(Spectrogram
+  &lt;br&gt;
+  begin = b3
+  end = e3
+  duration = d3
+  sample rate = sr3
+  fft2 parameters
+  ...
+  ) 
+  ~~~
+  aplose
+
+  style raw color:#4ae4ff
+  style processed color:#82ff9b
+  style spectro color:#0000,opacity:0%
+  style FFT opacity:0%,color:#0000
+  style processed2 opacity:0%,color:#0000
+  style spectro2 opacity:0%,color:#0000
+  style FFT2 opacity:0%,color:#0000
+  style aplose color:#0000,opacity:0%
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="objectif-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-out">
+<h2 data-id="quarto-animate-title">Objectif</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  raw(**Raw audio**
+  &lt;br&gt;
+  begin = b1
+  end = e1
+  file duration = d1
+  sample rate = sr1
+  ...
+  ) 
+  --&gt;
+  processed(**Processed audio**
   &lt;br&gt;
   begin = b2
   end = e2
@@ -395,7 +448,87 @@
   --&gt;
   FFT((FFT))
   --&gt;
-  spectro("`**Spectrogram**`"
+  spectro(**Spectrogram**
+  &lt;br&gt;
+  begin = b2
+  end = e2
+  duration = d2
+  sample rate = sr2
+  fft parameters
+  ...
+  ) 
+  ~~~
+  aplose(APLOSE) 
+
+  raw
+  ~~~
+  processed2(Processed audio
+  &lt;br&gt;
+  begin = b3
+  end = e3
+  file duration = d3
+  sample rate = sr3
+  ...
+  ) 
+  ~~~
+  FFT2((FFT2))
+  ~~~
+  spectro2(Spectrogram
+  &lt;br&gt;
+  begin = b3
+  end = e3
+  duration = d3
+  sample rate = sr3
+  fft2 parameters
+  ...
+  ) 
+  ~~~
+  aplose
+
+  style raw color:#4ae4ff
+  style processed color:#82ff9b
+  style spectro color:#82ff9b
+  style FFT stroke-width:1px,stroke-dasharray: 10, color: #82ff9b
+  style processed2 opacity:0%,color:#0000
+  style spectro2 opacity:0%,color:#0000
+  style FFT2 opacity:0%,color:#0000
+  style aplose color:#0000,opacity:0%
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="objectif-3" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-out">
+<h2 data-id="quarto-animate-title">Objectif</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  raw(**Raw audio**
+  &lt;br&gt;
+  begin = b1
+  end = e1
+  file duration = d1
+  sample rate = sr1
+  ...
+  ) 
+  --&gt;
+  processed(**Processed audio**
+  &lt;br&gt;
+  begin = b2
+  end = e2
+  file duration = d2
+  sample rate = sr2
+  ...
+  ) 
+  --&gt;
+  FFT((FFT))
+  --&gt;
+  spectro(**Spectrogram**
   &lt;br&gt;
   begin = b2
   end = e2
@@ -405,12 +538,40 @@
   ...
   ) 
   ---
-  aplose("`**APLOSE**`") 
+  aplose(**APLOSE**) 
+
+  raw
+  ~~~
+  processed2(Processed audio
+  &lt;br&gt;
+  begin = b3
+  end = e3
+  file duration = d3
+  sample rate = sr3
+  ...
+  ) 
+  ~~~
+  FFT2((FFT2))
+  ~~~
+  spectro2(Spectrogram
+  &lt;br&gt;
+  begin = b3
+  end = e3
+  duration = d3
+  sample rate = sr3
+  fft2 parameters
+  ...
+  ) 
+  ~~~
+  aplose
 
   style raw color:#4ae4ff
   style processed color:#82ff9b
   style spectro color:#82ff9b
   style FFT stroke-width:1px,stroke-dasharray: 10, color: #82ff9b
+  style processed2 opacity:0%,color:#0000
+  style spectro2 opacity:0%,color:#0000
+  style FFT2 opacity:0%,color:#0000
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -418,7 +579,7 @@
 </div>
 </div>
 </section>
-<section id="objectif-4" class="slide level2" data-auto-animate="true">
+<section id="objectif-4" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-out">
 <h2 data-id="quarto-animate-title">Objectif</h2>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -426,7 +587,7 @@
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-  raw("`**Raw audio**`"
+  raw(**Raw audio**
   &lt;br&gt;
   begin = b1
   end = e1
@@ -434,8 +595,8 @@
   sample rate = sr1
   ...
   ) 
-  --&gt; 
-  processed("`**Processed audio**`"
+  --&gt;
+  processed(**Processed audio**
   &lt;br&gt;
   begin = b2
   end = e2
@@ -446,7 +607,7 @@
   --&gt;
   FFT((FFT))
   --&gt;
-  spectro("`**Spectrogram**`"
+  spectro(**Spectrogram**
   &lt;br&gt;
   begin = b2
   end = e2
@@ -456,11 +617,11 @@
   ...
   ) 
   ---
-  aplose("`**APLOSE**`") 
+  aplose(**APLOSE**) 
 
   raw
   --&gt; 
-  processed2("`**Processed audio**`"
+  processed2(**Processed audio**
   &lt;br&gt;
   begin = b3
   end = e3
@@ -471,7 +632,7 @@
   ---
   FFT2((FFT2))
   --&gt;
-  spectro2("`**Spectrogram**`"
+  spectro2(**Spectrogram**
   &lt;br&gt;
   begin = b3
   end = e3
@@ -534,7 +695,7 @@
 <li class="fragment">Ancienne version d’<strong>OSEkit</strong></li>
 <li class="fragment">Ne fait <em>pour l’instant</em> pas appel à la <strong>Core API</strong></li>
 <li class="fragment">Pas très <strong>SOLID</strong></li>
-<li class="fragment"><em>Helpers</em> sur un repo <code>datarmor-toolik</code></li>
+<li class="fragment"><em>Helpers</em> sur un repo <code>datarmor-toolkit</code></li>
 </ul>
 <div class="fragment">
 <p>=&gt; Doit être réécrite rapidement</p>
@@ -712,7 +873,7 @@
 <h2 data-id="quarto-animate-title">Objectifs</h2>
 <ul>
 <li class="fragment">Manipuler des <span class="primary">pointeurs</span> vers l’audio plutôt que l’<span class="secondary">audio direct</span></li>
-<li class="fragment">Requêter l’audio <strong>au besoin</strong></li>
+<li class="fragment"><span class="primary">Requêter</span> / <span class="secondary">traiter</span> l’audio <strong>au besoin</strong></li>
 <li class="fragment">Objets à <strong>responsabilité unique</strong></li>
 </ul>
 </section>
