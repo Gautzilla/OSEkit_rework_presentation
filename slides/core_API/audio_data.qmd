@@ -1,6 +1,4 @@
-## Utilisation {auto-animate=true}
-
-### AudioData
+## AudioData { auto-animate=true  auto-animate-id="ad-un-fichier"}
 
 ```{.python code-line-numbers="1|4-5,7|2,4,6-7" style="margin-bottom:50px;"}
 from OSmOSE.data.audio_data import AudioData
@@ -16,9 +14,7 @@ ad = AudioData.from_files(
 **=>** Seules les **métadonnées** du fichier ont été lues.
 :::
 
-## Utilisation {auto-animate=true}
-
-### AudioData (un seul fichier)
+## AudioData (un seul fichier) { auto-animate=true  auto-animate-id="ad-un-fichier"}
 
 ```{.python code-line-numbers="9" style="margin-bottom:50px;"}
 from OSmOSE.data.audio_data import AudioData
@@ -34,9 +30,7 @@ vs = ad.get_value()
 
 **=>** On ne lit l'audio **que sur demande**.
 
-## Utilisation {auto-animate=true}
-
-### AudioData (plusieurs fichiers)
+## AudioData (plusieurs fichiers) { auto-animate=true  auto-animate-id="ad-n-fichiers"}
 
 ```{.python code-line-numbers="1-4|6" style="margin-bottom:50px;"}
 afs = [
@@ -52,9 +46,7 @@ ad = AudioData.from_files(files=afs)
 - **Un** [AudioItem]{.primary} est créé pour combler un vide entre deux [AudioFile]{.secondary}
 
 
-## Utilisation {auto-animate=true}
-
-### AudioData (plusieurs fichiers)
+## AudioData (plusieurs fichiers) { auto-animate=true  auto-animate-id="ad-n-fichiers"}
 
 ```{.python code-line-numbers="6-7|9" style="margin-bottom:50px;"}
 afs = [
@@ -74,9 +66,7 @@ ad = AudioData.from_files(files=afs, begin=begin, end=end)
 
 :::
 
-## Utilisation {auto-animate=true}
-
-### AudioData (plusieurs fichiers)
+## AudioData (plusieurs fichiers) { auto-animate=true  auto-animate-id="ad-n-fichiers"}
 
 ```{.python code-line-numbers="11" style="margin-bottom:50px;"}
 afs = [
@@ -95,9 +85,7 @@ vs = ad.get_value()
 **=>** La donnée est récupérée **sur demande** dans chaque fichier concerné par la requête.
 
 
-## Utilisation {auto-animate=true}
-
-### AudioData (rééchantillonnage)
+## AudioData (rééchantillonnage) { auto-animate=true  auto-animate-id="ad-reech"}
 
 ```{.python}
 ad.sample_rate = 96_000
@@ -109,9 +97,7 @@ ad.sample_rate = 96_000
 
 :::
 
-## Utilisation {auto-animate=true}
-
-### AudioData (rééchantillonnage)
+## AudioData (rééchantillonnage) { auto-animate=true  auto-animate-id="ad-reech"}
 
 ```{.python code-line-numbers="3"}
 ad.sample_rate = 96_000
@@ -119,11 +105,9 @@ ad.sample_rate = 96_000
 vs = ad.get_value()
 ```
 
-**=>** L'audio est **rééchantillonné à la demande** *(et rien n'a été écrit en dur)*.
+**=>** L'audio est **rééchantillonné à la demande** *(et rien n'a été écrit en dur)*
 
-## Utilisation {auto-animate=true}
-
-### AudioData (rééchantillonnage)
+## AudioData (rééchantillonnage) { auto-animate=true  auto-animate-id="ad-reech"}
 
 ```{.python code-line-numbers="3"}
 ad.sample_rate = 96_000

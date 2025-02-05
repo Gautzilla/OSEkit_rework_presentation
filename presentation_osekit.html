@@ -1026,9 +1026,8 @@
 </div>
 </div>
 </section>
-<section id="utilisation-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiofile">AudioFile</h3>
+<section id="audiofile" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">AudioFile</h2>
 <div class="sourceCode" id="cb9" style="margin-bottom:50px;" data-code-line-numbers="1-2|4-5,7|4,6-7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="im">from</span> OSmOSE.data.audio_file <span class="im">import</span> AudioFile</span>
 <span id="cb9-2"><a href=""></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb9-3"><a href=""></a></span>
@@ -1036,29 +1035,14 @@
 <span id="cb9-5"><a href=""></a>    path<span class="op">=</span>Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\example_dataset\7189.230405154906.wav"</span>),</span>
 <span id="cb9-6"><a href=""></a>    strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>,</span>
 <span id="cb9-7"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="center" style="font-size: 60%;">
 <div class="sourceCode" id="cb10" data-code-line-numbers="1-2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href=""></a>example_dataset</span>
 <span id="cb10-2"><a href=""></a>├── 7189.230405154906.wav</span>
 <span id="cb10-3"><a href=""></a>├── 7189.230405164906.wav</span>
 <span id="cb10-4"><a href=""></a>├── 7189.230405174906.wav</span>
 <span id="cb10-5"><a href=""></a>└── 7189.230405194906.wav</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 60%;">
-
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="media\audio_file.png" class="fragment quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div></div>
 </section>
-<section id="utilisation-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata">AudioData</h3>
+<section id="audiodata" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-un-fichier">
+<h2 data-id="quarto-animate-title">AudioData</h2>
 <div class="sourceCode" id="cb11" style="margin-bottom:50px;" data-code-line-numbers="1|4-5,7|2,4,6-7"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb11-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.audio_data <span class="im">import</span> AudioData</span>
 <span id="cb11-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> Timedelta</span>
 <span id="cb11-3" class="hljs-ln-code"><a href=""></a></span>
@@ -1070,9 +1054,8 @@
 <p><strong>=&gt;</strong> Seules les <strong>métadonnées</strong> du fichier ont été lues.</p>
 </div>
 </section>
-<section id="utilisation-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata-un-seul-fichier">AudioData (un seul fichier)</h3>
+<section id="audiodata-un-seul-fichier" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-un-fichier">
+<h2 data-id="quarto-animate-title">AudioData (un seul fichier)</h2>
 <div class="sourceCode" id="cb12" style="margin-bottom:50px;" data-code-line-numbers="9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb12-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.audio_data <span class="im">import</span> AudioData</span>
 <span id="cb12-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> Timedelta</span>
 <span id="cb12-3" class="hljs-ln-code"><a href=""></a></span>
@@ -1084,9 +1067,8 @@
 <span id="cb12-9" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> On ne lit l’audio <strong>que sur demande</strong>.</p>
 </section>
-<section id="utilisation-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata-plusieurs-fichiers">AudioData (plusieurs fichiers)</h3>
+<section id="audiodata-plusieurs-fichiers" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-n-fichiers">
+<h2 data-id="quarto-animate-title">AudioData (plusieurs fichiers)</h2>
 <div class="sourceCode" id="cb13" style="margin-bottom:50px;" data-code-line-numbers="1-4|6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb13-1" class="hljs-ln-code"><a href=""></a>afs <span class="op">=</span> [</span>
 <span id="cb13-2" class="hljs-ln-code"><a href=""></a>    AudioFile(f, strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>) </span>
 <span id="cb13-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> af.path.parent.glob(<span class="st">"*.wav"</span>)</span>
@@ -1099,9 +1081,8 @@
 <li class="fragment"><strong>Un</strong> <span class="primary">AudioItem</span> est créé pour combler un vide entre deux <span class="secondary">AudioFile</span></li>
 </ul>
 </section>
-<section id="utilisation-5" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata-plusieurs-fichiers-1">AudioData (plusieurs fichiers)</h3>
+<section id="audiodata-plusieurs-fichiers-1" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-n-fichiers">
+<h2 data-id="quarto-animate-title">AudioData (plusieurs fichiers)</h2>
 <div class="sourceCode" id="cb14" style="margin-bottom:50px;" data-code-line-numbers="6-7|9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb14-1" class="hljs-ln-code"><a href=""></a>afs <span class="op">=</span> [</span>
 <span id="cb14-2" class="hljs-ln-code"><a href=""></a>    AudioFile(f, strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>) </span>
 <span id="cb14-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> af.path.parent.glob(<span class="st">"*.wav"</span>)</span>
@@ -1115,9 +1096,8 @@
 <p><strong>=&gt;</strong> Création simple d’objets <code>AudioData</code> sans se soucier des <span class="primary">fichiers audio</span>.</p>
 </div>
 </section>
-<section id="utilisation-6" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata-plusieurs-fichiers-2">AudioData (plusieurs fichiers)</h3>
+<section id="audiodata-plusieurs-fichiers-2" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-n-fichiers">
+<h2 data-id="quarto-animate-title">AudioData (plusieurs fichiers)</h2>
 <div class="sourceCode" id="cb15" style="margin-bottom:50px;" data-code-line-numbers="11"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb15-1" class="hljs-ln-code"><a href=""></a>afs <span class="op">=</span> [</span>
 <span id="cb15-2" class="hljs-ln-code"><a href=""></a>    AudioFile(f, strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>) </span>
 <span id="cb15-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> af.path.parent.glob(<span class="st">"*.wav"</span>)</span>
@@ -1131,25 +1111,22 @@
 <span id="cb15-11" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> La donnée est récupérée <strong>sur demande</strong> dans chaque fichier concerné par la requête.</p>
 </section>
-<section id="utilisation-7" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata-rééchantillonnage">AudioData (rééchantillonnage)</h3>
+<section id="audiodata-rééchantillonnage" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-reech">
+<h2 data-id="quarto-animate-title">AudioData (rééchantillonnage)</h2>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb16-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><strong>=&gt;</strong> Seul l’<strong>objet</strong> <code>AudioData</code> est modifié <em>(on ne touche pas au fichier)</em></p>
 </div>
 </section>
-<section id="utilisation-8" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata-rééchantillonnage-1">AudioData (rééchantillonnage)</h3>
+<section id="audiodata-rééchantillonnage-1" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-reech">
+<h2 data-id="quarto-animate-title">AudioData (rééchantillonnage)</h2>
 <div class="sourceCode" id="cb17" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb17-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span>
 <span id="cb17-2" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb17-3" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>=&gt;</strong> L’audio est <strong>rééchantillonné à la demande</strong> <em>(et rien n’a été écrit en dur)</em>.</p>
+<p><strong>=&gt;</strong> L’audio est <strong>rééchantillonné à la demande</strong> <em>(et rien n’a été écrit en dur)</em></p>
 </section>
-<section id="utilisation-9" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata-rééchantillonnage-2">AudioData (rééchantillonnage)</h3>
+<section id="audiodata-rééchantillonnage-2" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-reech">
+<h2 data-id="quarto-animate-title">AudioData (rééchantillonnage)</h2>
 <div class="sourceCode" id="cb18" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb18-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span>
 <span id="cb18-2" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb18-3" class="hljs-ln-code"><a href=""></a>ad.write(af.path.parent <span class="op">/</span> <span class="st">"output"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1166,9 +1143,8 @@
 </ul>
 </div>
 </section>
-<section id="utilisation-10" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="spectre-spectrogramme">Spectre / Spectrogramme</h3>
+<section id="spectre" class="slide level2">
+<h2>Spectre</h2>
 <p>Pour <span class="primary">calculer</span> / <span class="secondary">tracer</span> le <strong>spectre</strong> d’un <code>AudioData</code> :</p>
 <ul>
 <li class="fragment">Objet <code>SpectroData</code> construit à partir :
@@ -1178,9 +1154,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="utilisation-11" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="spectre-spectrogramme-1">Spectre / Spectrogramme</h3>
+<section id="spectre-1" class="slide level2" data-auto-animate="true" data-auto-animate-id="sd-value">
+<h2 data-id="quarto-animate-title">Spectre</h2>
 <div class="sourceCode" id="cb19" data-code-line-numbers="1-2,5-10|3,12"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb19-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> scipy.signal <span class="im">import</span> ShortTimeFFT</span>
 <span id="cb19-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> scipy.signal.windows <span class="im">import</span> hamming</span>
 <span id="cb19-3" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.spectro_data <span class="im">import</span> SpectroData</span>
@@ -1197,9 +1172,8 @@
 <p><strong>=&gt;</strong> L’audio n’a <strong>toujours pas</strong> été manipulé.</p>
 </div>
 </section>
-<section id="utilisation-12" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="spectre-spectrogramme-2">Spectre / Spectrogramme</h3>
+<section id="spectre-2" class="slide level2" data-auto-animate="true" data-auto-animate-id="sd-value">
+<h2 data-id="quarto-animate-title">Spectre</h2>
 <div class="sourceCode" id="cb20" data-code-line-numbers="14"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb20-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> scipy.signal <span class="im">import</span> ShortTimeFFT</span>
 <span id="cb20-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> scipy.signal.windows <span class="im">import</span> hamming</span>
 <span id="cb20-3" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.spectro_data <span class="im">import</span> SpectroData</span>
@@ -1215,6 +1189,9 @@
 <span id="cb20-13" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb20-14" class="hljs-ln-code"><a href=""></a>sx <span class="op">=</span> sd.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> Les données sont toujours <span class="primary">récupérées</span> / <span class="secondary">traitées</span> <strong>à la demande</strong>.</p>
+</section>
+<section id="spectrogramme" class="slide level2" data-auto-animate="true" data-auto-animate-id="spectro">
+<h2 data-id="quarto-animate-title">Spectrogramme</h2>
 
 </section></section>
     </div>

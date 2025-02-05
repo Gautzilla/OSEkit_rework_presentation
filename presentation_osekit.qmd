@@ -40,9 +40,7 @@ filters:
 
 {{< include slides/core_API/audio_data.qmd >}}
 
-## Utilisation {auto-animate="true"}
-
-### Spectre / Spectrogramme
+## Spectre
 
 Pour [calculer]{.primary} / [tracer]{.secondary} le **spectre** d'un `AudioData` :
 
@@ -50,9 +48,7 @@ Pour [calculer]{.primary} / [tracer]{.secondary} le **spectre** d'un `AudioData`
     - d'un `AudioData`
     - d'une `scipy.signal.ShortTimeFFT`
 
-## Utilisation {auto-animate="true"}
-
-### spectre
+## Spectre {auto-animate="true" auto-animate-id="sd-value"}
 
 ```{.python code-line-numbers="1-2,5-10|3,12"}
 from scipy.signal import ShortTimeFFT
@@ -75,9 +71,7 @@ sd = SpectroData.from_audio_data(data=ad, fft=sft)
 
 :::
 
-## Utilisation {auto-animate="true"}
-
-### Spectre
+## Spectre {auto-animate="true" auto-animate-id="sd-value"}
 
 ```{.python code-line-numbers="14"}
 from scipy.signal import ShortTimeFFT
@@ -98,6 +92,4 @@ sx = sd.get_value()
 
 **=>** Les données sont toujours [récupérées]{.primary} / [traitées]{.secondary} **à la demande**.
 
-## Utilisation {auto-animate="true"}
-
-### Spectrogramme
+## Spectrogramme {auto-animate="true" auto-animate-id="spectro"}

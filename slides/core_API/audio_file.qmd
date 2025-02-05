@@ -1,6 +1,4 @@
-## Utilisation {auto-animate=true}
-
-### AudioFile
+## AudioFile {auto-animate=true}
 
 ```{.python code-line-numbers="1-2|4-5,7|4,6-7" style="margin-bottom:50px;"}
 from OSmOSE.data.audio_file import AudioFile
@@ -12,12 +10,6 @@ af = AudioFile(
     )
 ```
 
-:::{.columns}
-
-:::{.column width="50%"}
-
-:::{.center style="font-size: 60%;"}
-
 ```{.html code-line-numbers="1-2"}
 example_dataset
 ├── 7189.230405154906.wav
@@ -25,18 +17,3 @@ example_dataset
 ├── 7189.230405174906.wav
 └── 7189.230405194906.wav
 ```
-:::
-
-:::
-
-:::{.column width="50%"}
-
-:::{style="font-size: 60%;"}
-
-:::
-
-![](media\audio_file.png){.fragment fig-align=center}
-
-:::
-
-:::
