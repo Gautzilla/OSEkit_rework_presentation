@@ -1072,7 +1072,7 @@
 </section>
 <section id="utilisation-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Utilisation</h2>
-<h3 id="audiodata-1">AudioData</h3>
+<h3 id="audiodata-un-seul-fichier">AudioData (un seul fichier)</h3>
 <div class="sourceCode" id="cb12" style="margin-bottom:50px;" data-code-line-numbers="9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb12-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.audio_data <span class="im">import</span> AudioData</span>
 <span id="cb12-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> Timedelta</span>
 <span id="cb12-3" class="hljs-ln-code"><a href=""></a></span>
@@ -1083,6 +1083,53 @@
 <span id="cb12-8" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb12-9" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> On ne lit l’audio <strong>que sur demande</strong>.</p>
+</section>
+<section id="utilisation-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiodata-plusieurs-fichiers">AudioData (plusieurs fichiers)</h3>
+<div class="sourceCode" id="cb13" style="margin-bottom:50px;" data-code-line-numbers="1-4|6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb13-1" class="hljs-ln-code"><a href=""></a>afs <span class="op">=</span> [</span>
+<span id="cb13-2" class="hljs-ln-code"><a href=""></a>    AudioFile(f, strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>) </span>
+<span id="cb13-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> af.path.parent.glob(<span class="st">"*.wav"</span>)</span>
+<span id="cb13-4" class="hljs-ln-code"><a href=""></a>    ]</span>
+<span id="cb13-5" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb13-6" class="hljs-ln-code"><a href=""></a>ad <span class="op">=</span> AudioData.from_files(files<span class="op">=</span>afs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment"><strong>Un seul</strong> <span class="primary">AudioData</span> est créé</li>
+<li class="fragment"><strong>Un</strong> <span class="primary">AudioItem</span> est créé <strong>par</strong> <span class="secondary">AudioFile</span></li>
+<li class="fragment"><strong>Un</strong> <span class="primary">AudioItem</span> est créé pour combler un vide entre deux <span class="secondary">AudioFile</span></li>
+</ul>
+</section>
+<section id="utilisation-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiodata-plusieurs-fichiers-1">AudioData (plusieurs fichiers)</h3>
+<div class="sourceCode" id="cb14" style="margin-bottom:50px;" data-code-line-numbers="6-7|9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb14-1" class="hljs-ln-code"><a href=""></a>afs <span class="op">=</span> [</span>
+<span id="cb14-2" class="hljs-ln-code"><a href=""></a>    AudioFile(f, strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>) </span>
+<span id="cb14-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> af.path.parent.glob(<span class="st">"*.wav"</span>)</span>
+<span id="cb14-4" class="hljs-ln-code"><a href=""></a>    ]</span>
+<span id="cb14-5" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb14-6" class="hljs-ln-code"><a href=""></a>begin <span class="op">=</span> afs[<span class="dv">0</span>].end <span class="op">-</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb14-7" class="hljs-ln-code"><a href=""></a>end <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">+</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb14-8" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb14-9" class="hljs-ln-code"><a href=""></a>ad <span class="op">=</span> AudioData.from_files(files<span class="op">=</span>afs, begin<span class="op">=</span>begin, end<span class="op">=</span>end)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p><strong>=&gt;</strong> Création simple d’objets <code>AudioData</code> sans se soucier des <span class="primary">fichiers audio</span>.</p>
+</div>
+</section>
+<section id="utilisation-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiodata-plusieurs-fichiers-2">AudioData (plusieurs fichiers)</h3>
+<div class="sourceCode" id="cb15" style="margin-bottom:50px;" data-code-line-numbers="11"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb15-1" class="hljs-ln-code"><a href=""></a>afs <span class="op">=</span> [</span>
+<span id="cb15-2" class="hljs-ln-code"><a href=""></a>    AudioFile(f, strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>) </span>
+<span id="cb15-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> af.path.parent.glob(<span class="st">"*.wav"</span>)</span>
+<span id="cb15-4" class="hljs-ln-code"><a href=""></a>    ]</span>
+<span id="cb15-5" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb15-6" class="hljs-ln-code"><a href=""></a>begin <span class="op">=</span> afs[<span class="dv">0</span>].end <span class="op">-</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb15-7" class="hljs-ln-code"><a href=""></a>end <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">+</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb15-8" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb15-9" class="hljs-ln-code"><a href=""></a>ad <span class="op">=</span> AudioData.from_files(files<span class="op">=</span>afs, begin<span class="op">=</span>begin, end<span class="op">=</span>end)</span>
+<span id="cb15-10" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb15-11" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> La donnée est récupérée <strong>sur demande</strong> dans chaque fichier concerné par la requête.</p>
 
 </section></section>
     </div>

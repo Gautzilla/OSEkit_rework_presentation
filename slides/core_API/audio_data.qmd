@@ -1,0 +1,95 @@
+## Utilisation {auto-animate=true}
+
+### AudioData
+
+```{.python code-line-numbers="1|4-5,7|2,4,6-7" style="margin-bottom:50px;"}
+from OSmOSE.data.audio_data import AudioData
+from pandas import Timedelta
+
+ad = AudioData.from_files(
+    files=[af],
+    end=af.begin + Timedelta(seconds=2)
+    )
+```
+
+::: {.fragment}
+**=>** Seules les **métadonnées** du fichier ont été lues.
+:::
+
+## Utilisation {auto-animate=true}
+
+### AudioData (un seul fichier)
+
+```{.python code-line-numbers="9" style="margin-bottom:50px;"}
+from OSmOSE.data.audio_data import AudioData
+from pandas import Timedelta
+
+ad = AudioData.from_files(
+    files=[af],
+    end=af.begin + Timedelta(seconds=2)
+    )
+
+vs = ad.get_value()
+```
+
+**=>** On ne lit l'audio **que sur demande**.
+
+## Utilisation {auto-animate=true}
+
+### AudioData (plusieurs fichiers)
+
+```{.python code-line-numbers="1-4|6" style="margin-bottom:50px;"}
+afs = [
+    AudioFile(f, strptime_format="%y%m%d%H%M%S") 
+    for f in af.path.parent.glob("*.wav")
+    ]
+
+ad = AudioData.from_files(files=afs)
+```
+
+- **Un seul** [AudioData]{.primary} est créé
+- **Un** [AudioItem]{.primary} est créé **par** [AudioFile]{.secondary}
+- **Un** [AudioItem]{.primary} est créé pour combler un vide entre deux [AudioFile]{.secondary}
+
+
+## Utilisation {auto-animate=true}
+
+### AudioData (plusieurs fichiers)
+
+```{.python code-line-numbers="6-7|9" style="margin-bottom:50px;"}
+afs = [
+    AudioFile(f, strptime_format="%y%m%d%H%M%S") 
+    for f in af.path.parent.glob("*.wav")
+    ]
+
+begin = afs[0].end - Timedelta(seconds = 1)
+end = afs[1].begin + Timedelta(seconds = 1)
+
+ad = AudioData.from_files(files=afs, begin=begin, end=end)
+```
+
+::: {.fragment}
+
+**=>** Création simple d'objets `AudioData` sans se soucier des [fichiers audio]{.primary}.
+
+:::
+
+## Utilisation {auto-animate=true}
+
+### AudioData (plusieurs fichiers)
+
+```{.python code-line-numbers="11" style="margin-bottom:50px;"}
+afs = [
+    AudioFile(f, strptime_format="%y%m%d%H%M%S") 
+    for f in af.path.parent.glob("*.wav")
+    ]
+
+begin = afs[0].end - Timedelta(seconds = 1)
+end = afs[1].begin + Timedelta(seconds = 1)
+
+ad = AudioData.from_files(files=afs, begin=begin, end=end)
+
+vs = ad.get_value()
+```
+
+**=>** La donnée est récupérée **sur demande** dans chaque fichier concerné par la requête.
