@@ -42,7 +42,7 @@ classDiagram
 
 . . . 
 
-Héritage pour réutiliser la logique :
+**Héritage** pour réutiliser la logique :
 
 . . .
 

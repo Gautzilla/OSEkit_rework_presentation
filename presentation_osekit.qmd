@@ -35,3 +35,41 @@ filters:
 {{< include slides/core_API/presentation.qmd >}}
 
 {{< include slides/core_API/architecture.qmd >}}
+
+{{< include slides/core_API/audio_file.qmd >}}
+
+## Utilisation {auto-animate=true}
+
+### AudioData
+
+```{.python code-line-numbers="1|4-5,7|2,4,6-7" style="margin-bottom:50px;"}
+from OSmOSE.data.audio_data import AudioData
+from pandas import Timedelta
+
+ad = AudioData.from_files(
+    files=[af],
+    end=af.begin + Timedelta(seconds=2)
+    )
+```
+
+::: {.fragment}
+**=>** Seules les **métadonnées** du fichier ont été lues.
+:::
+
+## Utilisation {auto-animate=true}
+
+### AudioData
+
+```{.python code-line-numbers="9" style="margin-bottom:50px;"}
+from OSmOSE.data.audio_data import AudioData
+from pandas import Timedelta
+
+ad = AudioData.from_files(
+    files=[af],
+    end=af.begin + Timedelta(seconds=2)
+    )
+
+vs = ad.get_value()
+```
+
+**=>** On ne lit l'audio **que sur demande**.

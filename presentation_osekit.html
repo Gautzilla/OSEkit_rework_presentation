@@ -937,7 +937,7 @@
 <h2>Différents types de donnée</h2>
 <p><strong>OSEkit</strong> : Données <span class="primary">audio</span>, <span class="secondary">spectro</span>, <em>auxiliaires</em> etc.</p>
 <div class="fragment">
-<p>Héritage pour réutiliser la logique :</p>
+<p><strong>Héritage</strong> pour réutiliser la logique :</p>
 </div>
 <div class="fragment">
 <div class="cell" data-reveal="true" data-layout-align="default">
@@ -1026,9 +1026,63 @@
 </div>
 </div>
 </section>
-<section id="exemples-dutilisation" class="slide level2">
-<h2>Exemples d’utilisation</h2>
-<h3 id="a">A</h3>
+<section id="utilisation-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiofile">AudioFile</h3>
+<div class="sourceCode" id="cb9" style="margin-bottom:50px;" data-code-line-numbers="1-2|4-5,7|4,6-7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="im">from</span> OSmOSE.data.audio_file <span class="im">import</span> AudioFile</span>
+<span id="cb9-2"><a href=""></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a>af <span class="op">=</span> AudioFile(</span>
+<span id="cb9-5"><a href=""></a>    path<span class="op">=</span>Path(<span class="st">"dataset/7189.230405154906.wav"</span>),</span>
+<span id="cb9-6"><a href=""></a>    strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>,</span>
+<span id="cb9-7"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center" style="font-size: 60%;">
+<div class="sourceCode" id="cb10" data-code-line-numbers="1-2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href=""></a>dataset</span>
+<span id="cb10-2"><a href=""></a>├── 7189.230405154906.wav</span>
+<span id="cb10-3"><a href=""></a>├── 7189.230405164906.wav</span>
+<span id="cb10-4"><a href=""></a>├── 7189.230405174906.wav</span>
+<span id="cb10-5"><a href=""></a>└── 7189.230405194906.wav</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 60%;">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\audio_file.png" class="fragment quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="utilisation-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiodata">AudioData</h3>
+<div class="sourceCode" id="cb11" style="margin-bottom:50px;" data-code-line-numbers="1|4-5,7|2,4,6-7"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb11-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.audio_data <span class="im">import</span> AudioData</span>
+<span id="cb11-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> Timedelta</span>
+<span id="cb11-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb11-4" class="hljs-ln-code"><a href=""></a>ad <span class="op">=</span> AudioData.from_files(</span>
+<span id="cb11-5" class="hljs-ln-code"><a href=""></a>    files<span class="op">=</span>[af],</span>
+<span id="cb11-6" class="hljs-ln-code"><a href=""></a>    end<span class="op">=</span>af.begin <span class="op">+</span> Timedelta(seconds<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-7" class="hljs-ln-code"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p><strong>=&gt;</strong> Seules les <strong>métadonnées</strong> du fichier ont été lues.</p>
+</div>
+</section>
+<section id="utilisation-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiodata-1">AudioData</h3>
+<div class="sourceCode" id="cb12" style="margin-bottom:50px;" data-code-line-numbers="9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb12-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.audio_data <span class="im">import</span> AudioData</span>
+<span id="cb12-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> Timedelta</span>
+<span id="cb12-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb12-4" class="hljs-ln-code"><a href=""></a>ad <span class="op">=</span> AudioData.from_files(</span>
+<span id="cb12-5" class="hljs-ln-code"><a href=""></a>    files<span class="op">=</span>[af],</span>
+<span id="cb12-6" class="hljs-ln-code"><a href=""></a>    end<span class="op">=</span>af.begin <span class="op">+</span> Timedelta(seconds<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb12-7" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb12-8" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb12-9" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> On ne lit l’audio <strong>que sur demande</strong>.</p>
 
 </section></section>
     </div>
