@@ -1130,6 +1130,35 @@
 <span id="cb15-10" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb15-11" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> La donnée est récupérée <strong>sur demande</strong> dans chaque fichier concerné par la requête.</p>
+</section>
+<section id="utilisation-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiodata-rééchantillonnage">AudioData (rééchantillonnage)</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb16-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p><strong>=&gt;</strong> Seul l’<strong>objet</strong> <code>AudioData</code> est modifié <em>(on ne touche pas au fichier)</em></p>
+</div>
+</section>
+<section id="utilisation-8" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiodata-rééchantillonnage-1">AudioData (rééchantillonnage)</h3>
+<div class="sourceCode" id="cb17" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb17-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span>
+<span id="cb17-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb17-3" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> L’audio est <strong>rééchantillonné à la demande</strong> <em>(et rien n’a été écrit en dur)</em>.</p>
+</section>
+<section id="utilisation-9" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Utilisation</h2>
+<h3 id="audiodata-rééchantillonnage-2">AudioData (rééchantillonnage)</h3>
+<div class="sourceCode" id="cb18" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb18-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span>
+<span id="cb18-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb18-3" class="hljs-ln-code"><a href=""></a>ad.write(Path.home())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> Exporter l’<code>AudioData</code> :</p>
+<ul>
+<li class="fragment">Accède au(x) fichier(s)</li>
+<li class="fragment">Rééchantillonne l’audio <em>(si nécessaire)</em></li>
+<li class="fragment">Ecrit le fichier</li>
+</ul>
 
 </section></section>
     </div>

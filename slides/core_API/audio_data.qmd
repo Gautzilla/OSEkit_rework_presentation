@@ -93,3 +93,46 @@ vs = ad.get_value()
 ```
 
 **=>** La donnée est récupérée **sur demande** dans chaque fichier concerné par la requête.
+
+
+## Utilisation {auto-animate=true}
+
+### AudioData (rééchantillonnage)
+
+```{.python}
+ad.sample_rate = 96_000
+```
+
+::: {.fragment}
+
+**=>** Seul l'**objet** `AudioData` est modifié *(on ne touche pas au fichier)*
+
+:::
+
+## Utilisation {auto-animate=true}
+
+### AudioData (rééchantillonnage)
+
+```{.python code-line-numbers="3"}
+ad.sample_rate = 96_000
+
+vs = ad.get_value()
+```
+
+**=>** L'audio est **rééchantillonné à la demande** *(et rien n'a été écrit en dur)*.
+
+## Utilisation {auto-animate=true}
+
+### AudioData (rééchantillonnage)
+
+```{.python code-line-numbers="3"}
+ad.sample_rate = 96_000
+
+ad.write(Path.home())
+```
+
+**=>** Exporter l'`AudioData` :
+
+- Accède au(x) fichier(s)
+- Rééchantillonne l'audio *(si nécessaire)*
+- Ecrit le fichier
