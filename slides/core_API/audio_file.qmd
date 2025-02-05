@@ -7,7 +7,7 @@ from OSmOSE.data.audio_file import AudioFile
 from pathlib import Path
 
 af = AudioFile(
-    path=Path("dataset/7189.230405154906.wav"),
+    path=Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset\7189.230405154906.wav"),
     strptime_format="%y%m%d%H%M%S",
     )
 ```
@@ -19,7 +19,7 @@ af = AudioFile(
 :::{.center style="font-size: 60%;"}
 
 ```{.html code-line-numbers="1-2"}
-dataset
+example_dataset
 ├── 7189.230405154906.wav
 ├── 7189.230405164906.wav
 ├── 7189.230405174906.wav

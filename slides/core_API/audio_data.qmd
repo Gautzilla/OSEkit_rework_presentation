@@ -62,7 +62,7 @@ afs = [
     for f in af.path.parent.glob("*.wav")
     ]
 
-begin = afs[0].end - Timedelta(seconds = 1)
+begin = afs[1].begin - Timedelta(seconds = 1)
 end = afs[1].begin + Timedelta(seconds = 1)
 
 ad = AudioData.from_files(files=afs, begin=begin, end=end)
@@ -84,7 +84,7 @@ afs = [
     for f in af.path.parent.glob("*.wav")
     ]
 
-begin = afs[0].end - Timedelta(seconds = 1)
+begin = afs[1].begin - Timedelta(seconds = 1)
 end = afs[1].begin + Timedelta(seconds = 1)
 
 ad = AudioData.from_files(files=afs, begin=begin, end=end)
@@ -128,7 +128,7 @@ vs = ad.get_value()
 ```{.python code-line-numbers="3"}
 ad.sample_rate = 96_000
 
-ad.write(Path.home())
+ad.write(af.path.parent / "output")
 ```
 
 **=>** Exporter l'`AudioData` :
