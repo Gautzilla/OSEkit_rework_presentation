@@ -1,4 +1,15 @@
 ## Architecture
+
+::: {.r-stack}
+![](media\file_item_data_0.svg){.fragment fig-align=center}
+
+![](media\file_item_data_1.svg){.fragment fig-align=center}
+
+![](media\file_item_data_2.svg){.fragment fig-align=center}
+:::
+
+. . .
+
 ```{mermaid}
 classDiagram
     direction LR
@@ -24,11 +35,3 @@ classDiagram
         +from_files(list~File~,start,stop)$ Data
     }
 ```
-
-::: {.r-stack}
-![](media\file_item_data_0.svg){.fragment fig-align=center}
-
-![](media\file_item_data_1.svg){.fragment fig-align=center}
-
-![](media\file_item_data_2.svg){.fragment fig-align=center}
-:::
