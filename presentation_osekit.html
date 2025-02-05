@@ -931,8 +931,105 @@
 </div>
 </div>
 </div>
-
 </div>
+</section>
+<section id="différents-types-de-donnée" class="slide level2">
+<h2>Différents types de donnée</h2>
+<p><strong>OSEkit</strong> : Données <span class="primary">audio</span>, <span class="secondary">spectro</span>, <em>auxiliaires</em> etc.</p>
+<div class="fragment">
+<p>Héritage pour réutiliser la logique :</p>
+</div>
+<div class="fragment">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    direction LR
+    BaseItem "*" --&gt; "1" BaseFile
+    BaseData "*" --&gt; "*" BaseItem
+    AudioItem "*" --&gt; "1" AudioFile
+    AudioData "*" --&gt; "*" AudioItem
+    AuxItem "*" --&gt; "1" AuxFile
+    AuxData "*" --&gt; "*" AuxItem
+
+    BaseFile &lt;|-- AudioFile
+    BaseFile &lt;|-- AuxFile
+    BaseItem &lt;|-- AudioItem
+    BaseItem &lt;|-- AuxItem
+    BaseData &lt;|-- AudioData
+    BaseData &lt;|-- AuxData
+
+    class BaseFile{
+        +Path path
+        +Timestamp begin
+        +Timestamp end
+        +read(start,stop)
+    }
+    class BaseItem{
+        +BaseFile file
+        +Timestamp begin
+        +Timestamp end
+        +get_value()
+    }
+    class BaseData{
+        +list~BaseItem~ items
+        +get_value()
+        +from_files(list~BaseFile~,start,stop)$ BaseData
+    }
+
+    class AudioFile{
+        +Path path
+        +Timestamp begin
+        +Timestamp end
+        +float sample_rate
+        +read(start,stop)
+    }
+    class AudioItem{
+        +AudioFile file
+        +Timestamp begin
+        +Timestamp end
+        +get_value()
+    }
+    class AudioData{
+        +list~AudioItem~ items
+        +float sample_rate
+        +get_value()
+        +from_files(list~AudioFile~,start,stop)$ AudioData
+    }
+
+    class AuxFile{
+        +Path path
+        +Timestamp begin
+        +Timestamp end
+        +any sthg
+        +read(start,stop)
+    }
+    class AuxItem{
+        +AuxFile file
+        +Timestamp begin
+        +Timestamp end
+        +get_value()
+    }
+    class AuxData{
+        +list~AuxItem~ items
+        +any sthg
+        +get_value()
+        +from_files(list~AuxFile~,start,stop)$ AuxData
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemples-dutilisation" class="slide level2">
+<h2>Exemples d’utilisation</h2>
+<h3 id="a">A</h3>
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
