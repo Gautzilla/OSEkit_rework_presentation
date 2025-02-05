@@ -131,8 +131,14 @@ ad.sample_rate = 96_000
 ad.write(af.path.parent / "output")
 ```
 
-**=>** Exporter l'`AudioData` :
+**=> Ecriture** de l'`AudioData` :
 
-- Accède au(x) fichier(s)
-- Rééchantillonne l'audio *(si nécessaire)*
-- Ecrit le fichier
+:::{style="font-size:80%"}
+
+- **Lecture** de l'audio :
+    - [Ouverture]{.primary}/[fermeture]{.secondary} dynamique des fichiers
+    - [Lecture]{.primary} des échantillons compris entre deux [timestamps]{.secondary}
+- **Rééchantillonnage** de l'audio *(si nécessaire)*
+- **Ecriture** du fichier
+
+:::

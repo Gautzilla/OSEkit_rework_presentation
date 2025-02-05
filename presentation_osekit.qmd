@@ -39,3 +39,65 @@ filters:
 {{< include slides/core_API/audio_file.qmd >}}
 
 {{< include slides/core_API/audio_data.qmd >}}
+
+## Utilisation {auto-animate="true"}
+
+### Spectre / Spectrogramme
+
+Pour [calculer]{.primary} / [tracer]{.secondary} le **spectre** d'un `AudioData` :
+
+- Objet `SpectroData` construit à partir :
+    - d'un `AudioData`
+    - d'une `scipy.signal.ShortTimeFFT`
+
+## Utilisation {auto-animate="true"}
+
+### spectre
+
+```{.python code-line-numbers="1-2,5-10|3,12"}
+from scipy.signal import ShortTimeFFT
+from scipy.signal.windows import hamming
+from OSmOSE.data.spectro_data import SpectroData
+
+sft = ShortTimeFFT(
+    win=hamming(1_024),
+    hop=round(1_024*(1-0.95)), 
+    fs=ad.sample_rate, 
+    mfft=1_024
+    )
+
+sd = SpectroData.from_audio_data(data=ad, fft=sft)
+```
+
+::: {.fragment}
+
+**=>** L'audio n'a **toujours pas** été manipulé.
+
+:::
+
+## Utilisation {auto-animate="true"}
+
+### Spectre
+
+```{.python code-line-numbers="14"}
+from scipy.signal import ShortTimeFFT
+from scipy.signal.windows import hamming
+from OSmOSE.data.spectro_data import SpectroData
+
+sft = ShortTimeFFT(
+    win=hamming(1_024),
+    hop=round(1_024*(1-0.95)), 
+    fs=ad.sample_rate, 
+    mfft=1_024
+    )
+
+sd = SpectroData.from_audio_data(data=ad, fft=sft)
+
+sx = sd.get_value()
+```
+
+**=>** Les données sont toujours [récupérées]{.primary} / [traitées]{.secondary} **à la demande**.
+
+## Utilisation {auto-animate="true"}
+
+### Spectrogramme
