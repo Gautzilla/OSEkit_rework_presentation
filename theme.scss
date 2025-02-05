@@ -4,11 +4,11 @@
 $font-family-sans-serif: "Fira Code" !default;
 
 // colors
-$body-bg: #1D2B48 !default;
-$body-color: #F6EFE6 !default;
-$link-color: #00A6FF !default;
+$body-bg: #2c3e50 !default;
+$body-color: #ecf0f1 !default;
+$link-color: #3498db !default;
 $selection-bg: #26351c !default;
-$presentation-heading-color: #E08203 !default;
+$presentation-heading-color: #d35400 !default;
 
 // headings
 $presentation-heading-font: "Fira Code" !default;
@@ -35,23 +35,23 @@ $mermaid-label-fg-color: $body-color;
 }
 
 b, strong {
-    color: #ffde49;
+    color: #f1c40f;
 }
 
 .mermaid em {
-    color: #0099ff;
+    color: #2980b9;
 }
 
 i, em {
-    color: #dc82ff;
+    color: #8e44ad;
 }
 
 .primary {
-    color: #82ff9b;
+    color: #2ecc71;
 }
 
 .secondary {
-    color: #dc82ff;
+    color: #9b59b6;
 }
 
 .small-table table tbody tr {
