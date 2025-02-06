@@ -1470,6 +1470,52 @@
 <span id="cb36-20" class="hljs-ln-code"><a href=""></a>sds <span class="op">=</span> SpectroDataset.from_audio_dataset(ads, sft)</span>
 <span id="cb36-21" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb36-22" class="hljs-ln-code"><a href=""></a>sds.save_spectrogram(audio_folder <span class="op">/</span> <span class="st">"spectro"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="outro" class="title-slide slide level1 center">
+<h1>Outro</h1>
+
+</section>
+<section id="etat-actuel" class="slide level2">
+<h2>Etat actuel</h2>
+<p>La <strong>Core API</strong> fonctionne en local, mais :</p>
+<ul>
+<li class="fragment">Pas beaucoup de tests <strong>grandeur nature</strong></li>
+<li class="fragment">Pas encore de vrais <strong>retours utilisateurs</strong></li>
+<li class="fragment">Pas <em>(encore ?)</em> intégrée dans la version <em>legacy</em></li>
+<li class="fragment">Pas utilisable avec des <strong>jobs</strong>
+<ul>
+<li class="fragment">=&gt; Réservé à la <strong>Public API</strong> ?</li>
+</ul></li>
+</ul>
+</section>
+<section id="echéances-court-terme" class="slide level2 smaller">
+<h2>Echéances (court terme)</h2>
+<p><strong>Public API</strong> pour recoller à l’état d’esprit de la version <em>legacy</em></p>
+<ul>
+<li class="fragment">Intégrer des appels à la <strong>Core API</strong> dans <strong>OSEkit</strong> <em>legacy</em>
+<ul>
+<li class="fragment">Difficile à <strong>nettoyer</strong></li>
+<li class="fragment"><span class="primary">Pour</span>/<span class="secondary">Contre</span> à peser</li>
+</ul></li>
+<li class="fragment">Construire une <strong>Public API</strong> plus simple, calquée sur <strong>OSEkit</strong> <em>legacy</em>
+<ul>
+<li class="fragment"><span class="primary">Entrées</span>/<span class="secondary">Sorties</span> à <em>re-</em>définir <em>?</em></li>
+<li class="fragment">Permettrait de simplifier les <strong>dépendances du projet</strong></li>
+<li class="fragment">Intégration à la logique actuelle des <strong>jobs</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="echéances-plus-long-terme" class="slide level2">
+<h2>Echéances (<em>plus</em> long terme)</h2>
+<ul>
+<li class="fragment">Intégration de <strong>données auxiliaires</strong> :
+<ul>
+<li class="fragment"><strong>Jointure</strong> entre les différents héritages de <code>BaseData</code> pensés en amont</li>
+<li class="fragment">Réflexion à avoir sur le niveau de <strong>généralisation</strong> des objets de données auxiliaires</li>
+</ul></li>
+<li class="fragment">Classes d’<span class="primary">analyse</span>/<span class="secondary">traitement</span> qui <strong>composent</strong> avec les héritages de <code>BaseData</code></li>
+</ul>
 
 </section></section>
     </div>
