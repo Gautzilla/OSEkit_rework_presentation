@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="dessin.svg"
+   sodipodi:docname="ltas_dfs.svg"
    inkscape:export-batch-path="C:\Users\berthoga\Documents\Communications\OSEkit_rework\media\LTAS_DFS"
    inkscape:export-batch-name=""
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="0.089864794"
-     inkscape:cx="3249.3259"
-     inkscape:cy="283.75962"
+     inkscape:zoom="0.35945918"
+     inkscape:cx="4487.2968"
+     inkscape:cy="-432.59433"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -140,13 +140,12 @@
        inkscape:isstock="true"
        inkscape:label="Rayures 2:3">
       <rect
-   style="stroke:none"
-   x="0"
-   y="-0.5"
-   width="1"
-   height="2"
-   id="rect101" />
-
+         style="stroke:none"
+         x="0"
+         y="-0.5"
+         width="1"
+         height="2"
+         id="rect101" />
     </pattern>
     <linearGradient
        id="swatch100"
@@ -201,13 +200,12 @@
        inkscape:isstock="true"
        inkscape:label="Rayures 2:3">
       <rect
-   style="stroke:none"
-   x="0"
-   y="-0.5"
-   width="1"
-   height="2"
-   id="rect140" />
-
+         style="stroke:none"
+         x="0"
+         y="-0.5"
+         width="1"
+         height="2"
+         id="rect140" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -230,13 +228,12 @@
        inkscape:isstock="true"
        inkscape:label="Rayures 2:3">
       <rect
-   style="stroke:none"
-   x="0"
-   y="-0.5"
-   width="1"
-   height="2"
-   id="rect101-6" />
-
+         style="stroke:none"
+         x="0"
+         y="-0.5"
+         width="1"
+         height="2"
+         id="rect101-6" />
     </pattern>
   </defs>
   <g
@@ -448,15 +445,6 @@
        id="g87"
        transform="translate(-186.56773)">
       <rect
-         style="fill:#3498db;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         id="rect63"
-         width="70"
-         height="58.516727"
-         x="3105.9368"
-         y="153.96841"
-         rx="2.7602234"
-         ry="2.7602232" />
-      <rect
          style="fill:#000000;fill-opacity:0;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
          id="rect59"
          width="210"
@@ -654,5 +642,37 @@
        y="94.951675"
        rx="2.7602234"
        ry="2.7602232" />
+    <g
+       id="g86-8"
+       transform="translate(74.957416)">
+      <rect
+         style="fill:#3498db;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="rect58-8"
+         width="70"
+         height="58.516727"
+         x="2843.9114"
+         y="153.2184"
+         rx="2.7602234"
+         ry="2.7602232" />
+      <text
+         xml:space="preserve"
+         style="font-size:11.2889px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:end;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         x="3051.1902"
+         y="209.10999"
+         id="text54-4"><tspan
+           sodipodi:role="line"
+           id="tspan54-5"
+           style="font-size:11.2889px;text-align:end;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1"
+           x="3051.1902"
+           y="209.10999">1054950</tspan></text>
+      <path
+         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+         d="m 2913.9116,152.96841 v 59.01673"
+         id="path54-5" />
+      <path
+         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+         d="m 2983.9116,152.96841 v 59.01673"
+         id="path57-1" />
+    </g>
   </g>
 </svg>

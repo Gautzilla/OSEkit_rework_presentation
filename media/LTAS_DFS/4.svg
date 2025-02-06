@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="dessin.svg"
+   sodipodi:docname="ltas_dfs.svg"
    inkscape:export-batch-path="C:\Users\berthoga\Documents\Communications\OSEkit_rework\media\LTAS_DFS"
    inkscape:export-batch-name=""
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="0.089864794"
-     inkscape:cx="3249.3259"
-     inkscape:cy="283.75962"
+     inkscape:zoom="0.35945918"
+     inkscape:cx="4487.2968"
+     inkscape:cy="-432.59433"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -68,13 +68,12 @@
        inkscape:isstock="true"
        inkscape:label="Rayures 2:3">
       <rect
-   style="stroke:none"
-   x="0"
-   y="-0.5"
-   width="1"
-   height="2"
-   id="rect101" />
-
+         style="stroke:none"
+         x="0"
+         y="-0.5"
+         width="1"
+         height="2"
+         id="rect101" />
     </pattern>
     <linearGradient
        id="swatch100"
