@@ -41,3 +41,17 @@ filters:
 {{< include slides/core_API/audio_data.qmd >}}
 
 {{< include slides/core_API/spectro_data.qmd >}}
+
+## LTAS {auto-animate="true" auto-animate-id="ltas"}
+
+```{.python code-line-numbers="1"}
+ltas_data = AudioData.from_files(files=afs)
+
+ltas_sd = SpectroData.from_audio_data(ltas_data, sft)
+```
+
+::: {.fragment}
+
+
+
+:::
