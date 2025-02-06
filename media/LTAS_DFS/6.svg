@@ -98,77 +98,76 @@
      id="layer1"
      transform="translate(-2918.3689,-94.451668)">
     <g
-       id="g87"
-       transform="translate(-186.56773)">
+       id="g6">
       <rect
-         style="fill:#000000;fill-opacity:0;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         id="rect59"
-         width="210"
+         style="fill:url(#pattern103-2);fill-opacity:1;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="rect30-4"
+         width="70"
          height="58.516727"
-         x="3105.4365"
-         y="153.4684"
-         rx="2.7602232"
+         x="2988.8689"
+         y="94.951675"
+         rx="2.7602234"
          ry="2.7602232" />
+      <g
+         id="g86-8"
+         transform="translate(74.957416)">
+        <rect
+           style="fill:#3498db;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+           id="rect58-8"
+           width="70"
+           height="58.516727"
+           x="2843.9114"
+           y="153.2184"
+           rx="2.7602234"
+           ry="2.7602232" />
+        <text
+           xml:space="preserve"
+           style="font-size:11.2889px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:end;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+           x="3051.1902"
+           y="209.10999"
+           id="text54-4"><tspan
+             sodipodi:role="line"
+             id="tspan54-5"
+             style="font-size:11.2889px;text-align:end;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1"
+             x="3051.1902"
+             y="209.10999">1054950</tspan></text>
+        <path
+           style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:0.999997;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+           d="m 2913.9116,153.4684 v 58.51674"
+           id="path54-5" />
+        <path
+           style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:0.999997;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+           d="m 2983.9116,153.4684 v 58.51674"
+           id="path57-1" />
+      </g>
       <text
          xml:space="preserve"
          style="font-size:11.2889px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:end;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         x="3312.7153"
+         x="3126.1477"
          y="209.10999"
          id="text59"><tspan
            sodipodi:role="line"
            id="tspan59"
            style="font-size:11.2889px;text-align:end;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1"
-           x="3312.7153"
+           x="3126.1477"
            y="209.10999">1054950</tspan></text>
       <path
-         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
-         d="m 3175.4368,152.96841 v 59.01673"
+         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:0.999997;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+         d="m 2988.8691,153.4684 v 58.51674"
          id="path59" />
       <path
-         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
-         d="m 3245.4368,152.96841 v 59.01673"
+         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:0.999997;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+         d="m 3058.8691,153.4684 v 58.51674"
          id="path62" />
-    </g>
-    <rect
-       style="fill:url(#pattern103-2);fill-opacity:1;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       id="rect30-4"
-       width="70"
-       height="58.516727"
-       x="2988.8689"
-       y="94.951675"
-       rx="2.7602234"
-       ry="2.7602232" />
-    <g
-       id="g86-8"
-       transform="translate(74.957416)">
       <rect
-         style="fill:#3498db;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         id="rect58-8"
-         width="70"
+         style="fill:#000000;fill-opacity:0;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="rect59"
+         width="210"
          height="58.516727"
-         x="2843.9114"
-         y="153.2184"
-         rx="2.7602234"
+         x="2918.8689"
+         y="153.4684"
+         rx="2.7602232"
          ry="2.7602232" />
-      <text
-         xml:space="preserve"
-         style="font-size:11.2889px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:end;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         x="3051.1902"
-         y="209.10999"
-         id="text54-4"><tspan
-           sodipodi:role="line"
-           id="tspan54-5"
-           style="font-size:11.2889px;text-align:end;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1"
-           x="3051.1902"
-           y="209.10999">1054950</tspan></text>
-      <path
-         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
-         d="m 2913.9116,152.96841 v 59.01673"
-         id="path54-5" />
-      <path
-         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
-         d="m 2983.9116,152.96841 v 59.01673"
-         id="path57-1" />
     </g>
   </g>
 </svg>

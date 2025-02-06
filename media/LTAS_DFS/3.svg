@@ -69,56 +69,55 @@
      id="layer1"
      transform="translate(-2255.3686,-94.451668)">
     <g
-       id="g84"
-       transform="translate(-77.244302)">
-      <rect
-         style="fill:#000000;fill-opacity:0;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         id="rect18"
-         width="210"
-         height="58.516727"
-         x="2333.1128"
-         y="153.4684"
-         rx="2.7602232"
-         ry="2.7602232" />
+       id="g3">
       <text
          xml:space="preserve"
          style="font-size:11.2889px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:end;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         x="2540.3914"
+         x="2463.147"
          y="209.10999"
          id="text19"><tspan
            sodipodi:role="line"
            id="tspan19"
            style="font-size:11.2889px;text-align:end;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1"
-           x="2540.3914"
+           x="2463.147"
            y="209.10999">1054950</tspan></text>
       <path
-         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
-         d="m 2403.1129,152.96841 v 59.01673"
+         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:0.999997;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+         d="m 2325.8686,153.4684 v 58.51674"
          id="path19" />
       <path
-         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
-         d="m 2473.1129,152.96841 v 59.01673"
+         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:0.999997;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+         d="m 2395.8686,153.4684 v 58.51674"
          id="path22" />
       <rect
          style="fill:#000000;fill-opacity:0;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
          id="rect22"
          width="70"
          height="58.516727"
-         x="2333.1128"
+         x="2255.8684"
          y="94.951683"
          rx="2.7602234"
          ry="2.7602232" />
       <text
          xml:space="preserve"
          style="font-size:11.2889px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:end;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         x="2400.3914"
+         x="2323.147"
          y="150.59326"
          id="text24"><tspan
            sodipodi:role="line"
            id="tspan24"
            style="font-size:11.2889px;text-align:end;text-anchor:end;fill:#2ecc71;fill-opacity:1;stroke:none;stroke-width:1"
-           x="2400.3914"
+           x="2323.147"
            y="150.59326">351</tspan></text>
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="rect18"
+         width="210"
+         height="58.516727"
+         x="2255.8684"
+         y="153.4684"
+         rx="2.7602232"
+         ry="2.7602232" />
     </g>
   </g>
 </svg>

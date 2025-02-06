@@ -1,9 +1,9 @@
 ## Architecture
 
 ::: {.r-stack}
-![](media\file_item_data_0.svg){.fragment fig-align=center}
+![](media\file_item_data_0.svg){.fragment .fade-in-then-out fig-align=center}
 
-![](media\file_item_data_1.svg){.fragment fig-align=center}
+![](media\file_item_data_1.svg){.fragment .fade-in-then-out fig-align=center}
 
 ![](media\file_item_data_2.svg){.fragment fig-align=center}
 :::
@@ -14,7 +14,7 @@
 classDiagram
     direction LR
     Item "*" --> "1" File
-    Data "*" --> "*" Item
+    Data "1" --> "*" Item
     class File{
         +Path path
         +Timestamp begin
