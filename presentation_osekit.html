@@ -1279,11 +1279,119 @@
 </section>
 <section id="ltas" class="slide level2" data-auto-animate="true" data-auto-animate-id="ltas">
 <h2 data-id="quarto-animate-title">LTAS</h2>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb28-1" class="hljs-ln-code"><a href=""></a>ltas_data <span class="op">=</span> AudioData.from_files(files<span class="op">=</span>afs)</span>
-<span id="cb28-2" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb28-3" class="hljs-ln-code"><a href=""></a>ltas_sd <span class="op">=</span> SpectroData.from_audio_data(ltas_data, sft)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28" data-code-line-numbers="1|3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb28-1" class="hljs-ln-code"><a href=""></a>ltas_data <span class="op">=</span> AudioData.from_files(files<span class="op">=</span>afs)</span>
+<span id="cb28-2" class="hljs-ln-code"><a href=""></a>ltas_data.sample_rate <span class="op">=</span> <span class="dv">48_000</span></span>
+<span id="cb28-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb28-4" class="hljs-ln-code"><a href=""></a>ltas_sft <span class="op">=</span> ShortTimeFFT(</span>
+<span id="cb28-5" class="hljs-ln-code"><a href=""></a>    win<span class="op">=</span>hamming(<span class="dv">4_096</span>),</span>
+<span id="cb28-6" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">4_096</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.8</span>)), </span>
+<span id="cb28-7" class="hljs-ln-code"><a href=""></a>    fs<span class="op">=</span>ltas_data.sample_rate, </span>
+<span id="cb28-8" class="hljs-ln-code"><a href=""></a>    mfft<span class="op">=</span><span class="dv">4_096</span></span>
+<span id="cb28-9" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb28-10" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb28-11" class="hljs-ln-code"><a href=""></a>ltas_sd <span class="op">=</span> SpectroData.from_audio_data(ltas_data, ltas_sft)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-
+<p><strong>=&gt;</strong> Calcul de <span class="primary">spectre</span> sur une <span class="secondary">longue durée</span>.</p>
+</div>
+</section>
+<section id="ltas-1" class="slide level2" data-auto-animate="true" data-auto-animate-id="ltas">
+<h2 data-id="quarto-animate-title">LTAS</h2>
+<div class="sourceCode" id="cb29" data-code-line-numbers="5"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb29-1" class="hljs-ln-code"><a href=""></a>ltas_data <span class="op">=</span> AudioData.from_files(files<span class="op">=</span>afs)</span>
+<span id="cb29-2" class="hljs-ln-code"><a href=""></a>ltas_data.sample_rate <span class="op">=</span> <span class="dv">48_000</span></span>
+<span id="cb29-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb29-4" class="hljs-ln-code"><a href=""></a>ltas_sft <span class="op">=</span> ShortTimeFFT(</span>
+<span id="cb29-5" class="hljs-ln-code"><a href=""></a>    win<span class="op">=</span>hamming(<span class="dv">4_096</span>),</span>
+<span id="cb29-6" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">4_096</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.8</span>)), </span>
+<span id="cb29-7" class="hljs-ln-code"><a href=""></a>    fs<span class="op">=</span>ltas_data.sample_rate, </span>
+<span id="cb29-8" class="hljs-ln-code"><a href=""></a>    mfft<span class="op">=</span><span class="dv">4_096</span></span>
+<span id="cb29-9" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb29-10" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb29-11" class="hljs-ln-code"><a href=""></a>ltas_sd <span class="op">=</span> SpectroData.from_audio_data(ltas_data, ltas_sft)</span>
+<span id="cb29-12" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb29-13" class="hljs-ln-code"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>ltas_sd<span class="sc">.</span>nb_bytes<span class="op">/</span><span class="fl">1e9</span><span class="sc">:_}</span><span class="ss"> Gb"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> La matrice seule représente ~<code>17 Gb</code> de données…</p>
+</section>
+<section id="ltas-2" class="slide level2" data-auto-animate="true" data-auto-animate-id="ltasData">
+<h2 data-id="quarto-animate-title">LTAS</h2>
+<div class="sourceCode" id="cb30" data-code-line-numbers="1,3,6|4|5"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb30-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.ltas_data <span class="im">import</span> LTASData</span>
+<span id="cb30-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb30-3" class="hljs-ln-code"><a href=""></a>ltas <span class="op">=</span> LTASData.from_spectro_data(</span>
+<span id="cb30-4" class="hljs-ln-code"><a href=""></a>    spectro_data<span class="op">=</span>ltas_sd, </span>
+<span id="cb30-5" class="hljs-ln-code"><a href=""></a>    nb_time_bins<span class="op">=</span><span class="dv">3000</span></span>
+<span id="cb30-6" class="hljs-ln-code"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> L’objet <code>LTASData</code> est un <code>SpectroData</code> dont la matrice <code>Sx</code> est calculée <strong>récursivement</strong> <em>(par <strong>DFS</strong>)</em></p>
+</section>
+<section id="ltas-3" class="slide level2" data-auto-animate="true" data-auto-animate-id="ltasData">
+<h2 data-id="quarto-animate-title">LTAS</h2>
+<div class="sourceCode" id="cb31" data-code-line-numbers="1,3-6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb31-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.ltas_data <span class="im">import</span> LTASData</span>
+<span id="cb31-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb31-3" class="hljs-ln-code"><a href=""></a>ltas <span class="op">=</span> LTASData.from_spectro_data(</span>
+<span id="cb31-4" class="hljs-ln-code"><a href=""></a>    spectro_data<span class="op">=</span>ltas_sd, </span>
+<span id="cb31-5" class="hljs-ln-code"><a href=""></a>    nb_time_bins<span class="op">=</span><span class="dv">3000</span></span>
+<span id="cb31-6" class="hljs-ln-code"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\1.svg" class="fragment fade-in-then-out quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\2.svg" class="fragment fade-in-then-out quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\3.svg" class="fragment fade-in-then-out quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\4.svg" class="fragment fade-in-then-out quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\5.svg" class="fragment fade-in-then-out quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\6.svg" class="fragment fade-in-then-out quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\7.svg" class="fragment fade-in-then-out quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\8.svg" class="fragment fade-in-then-out quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="media\LTAS_DFS\9.svg" class="fragment quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="ltas-4" class="slide level2" data-auto-animate="true" data-auto-animate-id="ltasData">
+<h2 data-id="quarto-animate-title">LTAS</h2>
+<div class="sourceCode" id="cb32" data-code-line-numbers="8|10-11"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb32-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.ltas_data <span class="im">import</span> LTASData</span>
+<span id="cb32-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb32-3" class="hljs-ln-code"><a href=""></a>ltas <span class="op">=</span> LTASData.from_spectro_data(</span>
+<span id="cb32-4" class="hljs-ln-code"><a href=""></a>    spectro_data<span class="op">=</span>ltas_sd, </span>
+<span id="cb32-5" class="hljs-ln-code"><a href=""></a>    nb_time_bins<span class="op">=</span><span class="dv">3000</span></span>
+<span id="cb32-6" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb32-7" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb32-8" class="hljs-ln-code"><a href=""></a>ltas_sx <span class="op">=</span> ltas.get_value()</span>
+<span id="cb32-9" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb32-10" class="hljs-ln-code"><a href=""></a>ltas.plot(sx <span class="op">=</span> ltas_sx)</span>
+<span id="cb32-11" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p><strong>=&gt;</strong> Pour <em>n’importe quel</em> <strong>SpectroData</strong>, on peut passer la <code>sx</code> en paramètre de <code>plot()</code> et <code>write()</code> pour ne pas avoir à la recalculer.</p>
 </div>
 
 </section></section>

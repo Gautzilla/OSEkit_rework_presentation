@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="211.00012mm"
+   height="118.03348mm"
+   viewBox="0 0 211.00012 118.03348"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="dessin.svg"
+   inkscape:export-batch-path="C:\Users\berthoga\Documents\Communications\OSEkit_rework\media\LTAS_DFS"
+   inkscape:export-batch-name=""
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.089864794"
+     inkscape:cx="3249.3259"
+     inkscape:cy="283.75962"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="211.00012"
+       height="118.03348"
+       id="page92"
+       margin="0"
+       bleed="0"
+       inkscape:label="5" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch100"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#2ecc71;stop-opacity:1;"
+         offset="0"
+         id="stop100" />
+    </linearGradient>
+    <linearGradient
+       id="swatch96"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#2ecc71;stop-opacity:1;"
+         offset="0"
+         id="stop96" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-2697.3688,-94.451668)">
+    <g
+       id="g86"
+       transform="translate(-146.04277)">
+      <rect
+         style="fill:#3498db;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="rect58"
+         width="70"
+         height="58.516727"
+         x="2843.9114"
+         y="153.2184"
+         rx="2.7602234"
+         ry="2.7602232" />
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         id="rect54"
+         width="210"
+         height="58.516727"
+         x="2843.9114"
+         y="153.4684"
+         rx="2.7602232"
+         ry="2.7602232" />
+      <text
+         xml:space="preserve"
+         style="font-size:11.2889px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:end;writing-mode:lr-tb;direction:ltr;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         x="3051.1902"
+         y="209.10999"
+         id="text54"><tspan
+           sodipodi:role="line"
+           id="tspan54"
+           style="font-size:11.2889px;text-align:end;text-anchor:end;fill:#e74c3c;fill-opacity:1;stroke:none;stroke-width:1"
+           x="3051.1902"
+           y="209.10999">1054950</tspan></text>
+      <path
+         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+         d="m 2913.9116,152.96841 v 59.01673"
+         id="path54" />
+      <path
+         style="fill:#e74c3c;fill-opacity:1;stroke:#e74c3c;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:12, 12;stroke-dashoffset:0"
+         d="m 2983.9116,152.96841 v 59.01673"
+         id="path57" />
+    </g>
+  </g>
+</svg>
