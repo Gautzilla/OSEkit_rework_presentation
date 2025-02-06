@@ -6,6 +6,7 @@ format:
         incremental: true
         transition: slide
         theme: [default, theme.scss]
+        code-block-height: 650px
 filters:
     - pyodide
 ---
@@ -43,3 +44,5 @@ filters:
 {{< include slides/core_API/spectro_data.qmd >}}
 
 {{< include slides/core_API/ltas.qmd >}}
+
+{{< include slides/core_API/dataset.qmd >}}

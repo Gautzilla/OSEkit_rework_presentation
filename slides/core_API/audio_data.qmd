@@ -35,7 +35,7 @@ vs = ad.get_value()
 ```{.python code-line-numbers="1-4|6" style="margin-bottom:50px;"}
 afs = [
     AudioFile(f, strptime_format="%y%m%d%H%M%S") 
-    for f in af.path.parent.glob("*.wav")
+    for f in audio_folder.glob("*.wav")
     ]
 
 ad = AudioData.from_files(files=afs)
@@ -51,7 +51,7 @@ ad = AudioData.from_files(files=afs)
 ```{.python code-line-numbers="6-7|9" style="margin-bottom:50px;"}
 afs = [
     AudioFile(f, strptime_format="%y%m%d%H%M%S") 
-    for f in af.path.parent.glob("*.wav")
+    for f in audio_folder.glob("*.wav")
     ]
 
 begin = afs[1].begin - Timedelta(seconds = 5)
@@ -71,7 +71,7 @@ ad = AudioData.from_files(files=afs, begin=begin, end=end)
 ```{.python code-line-numbers="11" style="margin-bottom:50px;"}
 afs = [
     AudioFile(f, strptime_format="%y%m%d%H%M%S") 
-    for f in af.path.parent.glob("*.wav")
+    for f in audio_folder.glob("*.wav")
     ]
 
 begin = afs[1].begin - Timedelta(seconds = 5)
@@ -112,7 +112,7 @@ vs = ad.get_value()
 ```{.python code-line-numbers="3"}
 ad.sample_rate = 48_000
 
-ad.write(af.path.parent / "output")
+ad.write(audio_folder / "output")
 ```
 
 **=> Ecriture** de l'`AudioData` :

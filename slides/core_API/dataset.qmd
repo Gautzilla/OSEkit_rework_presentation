@@ -1,0 +1,79 @@
+## BaseDataset
+
+- Objet le plus [haut-niveau]{.primary} de la **Core API**
+- **Mutualise** les opérations sur une série d'objets `Data`
+
+## AudioDataset { auto-animate=true  auto-animate-id="ads"}
+
+```{.python code-line-numbers="1,3,7|1,3-5,7|1,3,6-7"}
+from OSmOSE.data.audio_dataset import AudioDataset
+
+ads = AudioDataset.from_folder(
+    folder=audio_folder, 
+    strptime_format="%y%m%d%H%M%S",
+    data_duration=Timedelta(seconds=10)
+    )
+
+```
+
+## AudioDataset { auto-animate=true  auto-animate-id="ads"}
+
+```{.python code-line-numbers="9,11"}
+from OSmOSE.data.audio_dataset import AudioDataset
+
+ads = AudioDataset.from_folder(
+    folder=audio_folder, 
+    strptime_format="%y%m%d%H%M%S",
+    data_duration=Timedelta(seconds=10)
+    )
+
+ads.sample_rate = 500
+
+ads.write(audio_folder / "reshaped")
+
+```
+
+**=>** **Exemple** : [découpage]{.primary} et [rééchantillonnage]{.secondary}.
+
+## SpectroDataset { auto-animate=true  auto-animate-id="sds"}
+
+`SpectroDataset` mutualise de la même manière les opérations faites sur les `SpectroData`.
+
+::: {.fragment style="margin-top:50px"}
+
+**=> Exemple complet** :
+
+:::
+
+- [Découpage]{.primary}
+- [Rééchantillonnage]{.secondary}
+- [Calcul des spectres]{.primary}
+- [Export des spectrogrammes]{.secondary}
+
+## SpectroDataset { auto-animate=true  auto-animate-id="sds"}
+
+```{.python code-line-numbers="3-5,9|3,6-9|11|13-18|1,20|22" style="font-size:85%"}
+from OSmOSE.data.spectro_dataset import SpectroDataset
+
+ads = AudioDataset.from_folder(
+    folder = audio_folder,
+    strptime_format = "%y%m%d%H%M%S",
+    begin = Timestamp("2023-04-05 16:40:00"),
+    end = Timestamp("2023-04-05 17:00:00"),
+    data_duration = Timedelta(minutes = 1),
+)
+
+ads.sample_rate = 48_000
+
+sft = ShortTimeFFT(
+    win=hamming(1_024),
+    hop=round(1_024*(1-0.8)), 
+    fs=ads.sample_rate, 
+    mfft=1_024
+    )
+
+sds = SpectroDataset.from_audio_dataset(ads, sft)
+
+sds.save_spectrogram(audio_folder / "spectro")
+
+```

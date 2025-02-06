@@ -1,11 +1,13 @@
 ## AudioFile {auto-animate=true}
 
-```{.python code-line-numbers="1-2|4-5,7|4,6-7" style="margin-bottom:50px;"}
+```{.python code-line-numbers="1-2-4|6-7,9|6,8-9" style="margin-bottom:50px;"}
 from OSmOSE.data.audio_file import AudioFile
 from pathlib import Path
 
+audio_folder = Path("C:\Users\berthoga\Documents\Datasets\example_dataset")
+
 af = AudioFile(
-    path=Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset\7189.230405154906.wav"),
+    path=audio_folder / "7189.230405154906.wav"),
     strptime_format="%y%m%d%H%M%S",
     )
 ```

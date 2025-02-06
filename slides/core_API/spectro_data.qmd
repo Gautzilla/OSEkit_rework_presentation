@@ -68,7 +68,7 @@ sd = SpectroData.from_audio_data(data=ad, fft=sft)
 
 sx = sd.get_value()
 
-sd.write(afs[0].path.parent / "npz")
+sd.write(audio_folder / "npz")
 ```
 
 **=>** Les **matrices** peuvent être écrites dans des fichiers `npz`
@@ -97,7 +97,7 @@ ad2 = AudioData.from_files(
 ad2.sample_rate = ad.sample_rate
 sd2 = SpectroData.from_audio_data(data=ad2, fft=sft)
 
-sd2.write(afs[0].path.parent / "npz")
+sd2.write(audio_folder / "npz")
 ```
 
 **=>** Les objets `SpectroData` peuvent être reconstruits à partir de plusieurs `SpectroFile` *(de la même manière que les `AudioData`)*
@@ -107,7 +107,7 @@ sd2.write(afs[0].path.parent / "npz")
 ```{.python code-line-numbers="1-4|6"}
 sfs = [
     SpectroFile(f, strptime_format="%Y_%m_%d_%H_%M_%S") 
-    for f in (afs[0].path.parent / "npz").glob("*.npz")
+    for f in (audio_folder / "npz").glob("*.npz")
     ]
 
 sd_tot = SpectroData.from_files(sfs)
@@ -132,6 +132,14 @@ plt.show()
 
 ## Spectrogramme {auto-animate="true" auto-animate-id="spectro"}
 
+```{.python}
+sd.save_spectrogram(audio_folder / "spectro")
+```
+
+**=>** Les **spectrogrammes** peuvent être exportés avec la méthode `save_spectrogram()`
+
+## Spectrogramme {auto-animate="true" auto-animate-id="spectro"}
+
 ```{.python code-line-numbers="1-2"}
 fig, ax = plt.subplots(1,1)
 sd.plot(ax=ax)
@@ -145,7 +153,7 @@ plt.show()
 
 ```{.python code-line-numbers="1-7|9-11|12"}
 ad2 = AudioData.from_files(
-    files=afs, 
+    files=afs,      
     begin=ad.end, 
     end=ad.end+ad.duration
     )
