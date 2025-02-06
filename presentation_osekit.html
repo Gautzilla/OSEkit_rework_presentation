@@ -1190,38 +1190,91 @@
 <span id="cb20-14" class="hljs-ln-code"><a href=""></a>sx <span class="op">=</span> sd.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> Les données sont toujours <span class="primary">récupérées</span> / <span class="secondary">traitées</span> <strong>à la demande</strong>.</p>
 </section>
+<section id="spectre-3" class="slide level2" data-auto-animate="true" data-auto-animate-id="sd-value">
+<h2 data-id="quarto-animate-title">Spectre</h2>
+<div class="sourceCode" id="cb21" data-code-line-numbers="16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb21-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> scipy.signal <span class="im">import</span> ShortTimeFFT</span>
+<span id="cb21-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> scipy.signal.windows <span class="im">import</span> hamming</span>
+<span id="cb21-3" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.spectro_data <span class="im">import</span> SpectroData</span>
+<span id="cb21-4" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb21-5" class="hljs-ln-code"><a href=""></a>sft <span class="op">=</span> ShortTimeFFT(</span>
+<span id="cb21-6" class="hljs-ln-code"><a href=""></a>    win<span class="op">=</span>hamming(<span class="dv">1_024</span>),</span>
+<span id="cb21-7" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">1_024</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.8</span>)), </span>
+<span id="cb21-8" class="hljs-ln-code"><a href=""></a>    fs<span class="op">=</span>ad.sample_rate, </span>
+<span id="cb21-9" class="hljs-ln-code"><a href=""></a>    mfft<span class="op">=</span><span class="dv">1_024</span></span>
+<span id="cb21-10" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb21-11" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb21-12" class="hljs-ln-code"><a href=""></a>sd <span class="op">=</span> SpectroData.from_audio_data(data<span class="op">=</span>ad, fft<span class="op">=</span>sft)</span>
+<span id="cb21-13" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb21-14" class="hljs-ln-code"><a href=""></a>sx <span class="op">=</span> sd.get_value()</span>
+<span id="cb21-15" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb21-16" class="hljs-ln-code"><a href=""></a>sd.write(afs[<span class="dv">0</span>].path.parent <span class="op">/</span> <span class="st">"npz"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> Les <strong>matrices</strong> peuvent être écrites dans des fichiers <code>npz</code></p>
+</section>
+<section id="spectre-4" class="slide level2" data-auto-animate="true" data-auto-animate-id="sd-value">
+<h2 data-id="quarto-animate-title">Spectre</h2>
+<div class="sourceCode" id="cb22" data-code-line-numbers="1,3-6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb22-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.data.spectro_file <span class="im">import</span> SpectroFile</span>
+<span id="cb22-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb22-3" class="hljs-ln-code"><a href=""></a>sf_1 <span class="op">=</span> SpectroFile(</span>
+<span id="cb22-4" class="hljs-ln-code"><a href=""></a>    Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\example_dataset\npz\2023_04_05_16_49_01.npz"</span>),</span>
+<span id="cb22-5" class="hljs-ln-code"><a href=""></a>    strptime_format <span class="op">=</span> <span class="st">"%Y_%m_</span><span class="sc">%d</span><span class="st">_%H_%M_%S"</span></span>
+<span id="cb22-6" class="hljs-ln-code"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> Ces fichiers <code>npz</code> peuvent être utilisés pour créer des <strong>objets</strong> <code>SpectroFile</code></p>
+</section>
+<section id="spectre-5" class="slide level2" data-auto-animate="true" data-auto-animate-id="sd-value">
+<h2 data-id="quarto-animate-title">Spectre</h2>
+<div class="sourceCode" id="cb23" data-code-line-numbers="1-6|7|9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb23-1" class="hljs-ln-code"><a href=""></a>ad2 <span class="op">=</span> AudioData.from_files(</span>
+<span id="cb23-2" class="hljs-ln-code"><a href=""></a>    files<span class="op">=</span>afs, </span>
+<span id="cb23-3" class="hljs-ln-code"><a href=""></a>    begin<span class="op">=</span>ad.end<span class="op">+</span>Timedelta(seconds<span class="op">=</span><span class="dv">1</span>), </span>
+<span id="cb23-4" class="hljs-ln-code"><a href=""></a>    end<span class="op">=</span>ad.end<span class="op">+</span>Timedelta(seconds<span class="op">=</span><span class="dv">1</span>)<span class="op">+</span>ad.duration</span>
+<span id="cb23-5" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb23-6" class="hljs-ln-code"><a href=""></a>ad2.sample_rate <span class="op">=</span> ad.sample_rate</span>
+<span id="cb23-7" class="hljs-ln-code"><a href=""></a>sd2 <span class="op">=</span> SpectroData.from_audio_data(data<span class="op">=</span>ad2, fft<span class="op">=</span>sft)</span>
+<span id="cb23-8" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb23-9" class="hljs-ln-code"><a href=""></a>sd2.write(afs[<span class="dv">0</span>].path.parent <span class="op">/</span> <span class="st">"npz"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> Les objets <code>SpectroData</code> peuvent être reconstruits à partir de plusieurs <code>SpectroFile</code> <em>(de la même manière que les <code>AudioData</code>)</em></p>
+</section>
+<section id="spectre-6" class="slide level2" data-auto-animate="true" data-auto-animate-id="sd-value">
+<h2 data-id="quarto-animate-title">Spectre</h2>
+<div class="sourceCode" id="cb24" data-code-line-numbers="1-4|6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb24-1" class="hljs-ln-code"><a href=""></a>sfs <span class="op">=</span> [</span>
+<span id="cb24-2" class="hljs-ln-code"><a href=""></a>    SpectroFile(f, strptime_format<span class="op">=</span><span class="st">"%Y_%m_</span><span class="sc">%d</span><span class="st">_%H_%M_%S"</span>) </span>
+<span id="cb24-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> (afs[<span class="dv">0</span>].path.parent <span class="op">/</span> <span class="st">"npz"</span>).glob(<span class="st">"*.npz"</span>)</span>
+<span id="cb24-4" class="hljs-ln-code"><a href=""></a>    ]</span>
+<span id="cb24-5" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb24-6" class="hljs-ln-code"><a href=""></a>sd_tot <span class="op">=</span> SpectroData.from_files(sfs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> Les objets <code>SpectroData</code> peuvent être reconstruits à partir de plusieurs <code>SpectroFile</code> <em>(de la même manière que les <code>AudioData</code>)</em></p>
+</section>
 <section id="spectrogramme" class="slide level2" data-auto-animate="true" data-auto-animate-id="spectro">
 <h2 data-id="quarto-animate-title">Spectrogramme</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb21-1" class="hljs-ln-code"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb21-2" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb21-3" class="hljs-ln-code"><a href=""></a>sd.plot()</span>
-<span id="cb21-4" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25" data-code-line-numbers="1,3-4"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb25-1" class="hljs-ln-code"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb25-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb25-3" class="hljs-ln-code"><a href=""></a>sd.plot()</span>
+<span id="cb25-4" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><strong>=&gt;</strong> Les <strong>spectrogrammes</strong> sont tracés sur la <span class="primary">figure par défaut</span> de la version <em>legacy</em>.</p>
 </div>
 </section>
 <section id="spectrogramme-1" class="slide level2" data-auto-animate="true" data-auto-animate-id="spectro">
 <h2 data-id="quarto-animate-title">Spectrogramme</h2>
-<div class="sourceCode" id="cb22" data-code-line-numbers="1,3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb22-1" class="hljs-ln-code"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb22-2" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb22-3" class="hljs-ln-code"><a href=""></a>sd.plot(ax<span class="op">=</span>ax)</span>
-<span id="cb22-4" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26" data-code-line-numbers="1-2"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb26-1" class="hljs-ln-code"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb26-2" class="hljs-ln-code"><a href=""></a>sd.plot(ax<span class="op">=</span>ax)</span>
+<span id="cb26-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb26-4" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> On peut spécifier un <code>Axes</code> sur lequel tracer le <strong>spectrogramme</strong>.</p>
 </section>
 <section id="spectrogramme-2" class="slide level2" data-auto-animate="true" data-auto-animate-id="spectro">
 <h2 data-id="quarto-animate-title">Spectrogramme</h2>
-<div class="sourceCode" id="cb23" data-code-line-numbers="1-7|9-11|12"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb23-1" class="hljs-ln-code"><a href=""></a>ad2 <span class="op">=</span> AudioData.from_files(</span>
-<span id="cb23-2" class="hljs-ln-code"><a href=""></a>    files<span class="op">=</span>afs, </span>
-<span id="cb23-3" class="hljs-ln-code"><a href=""></a>    begin<span class="op">=</span>ad.end, </span>
-<span id="cb23-4" class="hljs-ln-code"><a href=""></a>    end<span class="op">=</span>ad.end<span class="op">+</span>ad.duration</span>
-<span id="cb23-5" class="hljs-ln-code"><a href=""></a>    )</span>
-<span id="cb23-6" class="hljs-ln-code"><a href=""></a>ad2.sample_rate <span class="op">=</span> ad.sample_rate</span>
-<span id="cb23-7" class="hljs-ln-code"><a href=""></a>sd2 <span class="op">=</span> SpectroData.from_audio_data(data<span class="op">=</span>ad2, fft<span class="op">=</span>sft)</span>
-<span id="cb23-8" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb23-9" class="hljs-ln-code"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb23-10" class="hljs-ln-code"><a href=""></a>sd.plot(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
-<span id="cb23-11" class="hljs-ln-code"><a href=""></a>sd2.plot(ax<span class="op">=</span>axs[<span class="dv">1</span>])</span>
-<span id="cb23-12" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27" data-code-line-numbers="1-7|9-11|12"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb27-1" class="hljs-ln-code"><a href=""></a>ad2 <span class="op">=</span> AudioData.from_files(</span>
+<span id="cb27-2" class="hljs-ln-code"><a href=""></a>    files<span class="op">=</span>afs, </span>
+<span id="cb27-3" class="hljs-ln-code"><a href=""></a>    begin<span class="op">=</span>ad.end, </span>
+<span id="cb27-4" class="hljs-ln-code"><a href=""></a>    end<span class="op">=</span>ad.end<span class="op">+</span>ad.duration</span>
+<span id="cb27-5" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb27-6" class="hljs-ln-code"><a href=""></a>ad2.sample_rate <span class="op">=</span> ad.sample_rate</span>
+<span id="cb27-7" class="hljs-ln-code"><a href=""></a>sd2 <span class="op">=</span> SpectroData.from_audio_data(data<span class="op">=</span>ad2, fft<span class="op">=</span>sft)</span>
+<span id="cb27-8" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb27-9" class="hljs-ln-code"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb27-10" class="hljs-ln-code"><a href=""></a>sd.plot(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
+<span id="cb27-11" class="hljs-ln-code"><a href=""></a>sd2.plot(ax<span class="op">=</span>axs[<span class="dv">1</span>])</span>
+<span id="cb27-12" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> Exemple pour <strong>2 spectrogrammes</strong> consécutifs sur <strong>une même figure</strong>.</p>
 
 </section></section>
