@@ -54,8 +54,8 @@ afs = [
     for f in af.path.parent.glob("*.wav")
     ]
 
-begin = afs[1].begin - Timedelta(seconds = 1)
-end = afs[1].begin + Timedelta(seconds = 1)
+begin = afs[1].begin - Timedelta(seconds = 5)
+end = afs[1].begin + Timedelta(seconds = 5)
 
 ad = AudioData.from_files(files=afs, begin=begin, end=end)
 ```
@@ -74,8 +74,8 @@ afs = [
     for f in af.path.parent.glob("*.wav")
     ]
 
-begin = afs[1].begin - Timedelta(seconds = 1)
-end = afs[1].begin + Timedelta(seconds = 1)
+begin = afs[1].begin - Timedelta(seconds = 5)
+end = afs[1].begin + Timedelta(seconds = 5)
 
 ad = AudioData.from_files(files=afs, begin=begin, end=end)
 
@@ -88,7 +88,7 @@ vs = ad.get_value()
 ## AudioData (rééchantillonnage) { auto-animate=true  auto-animate-id="ad-reech"}
 
 ```{.python}
-ad.sample_rate = 96_000
+ad.sample_rate = 48_000
 ```
 
 ::: {.fragment}
@@ -100,7 +100,7 @@ ad.sample_rate = 96_000
 ## AudioData (rééchantillonnage) { auto-animate=true  auto-animate-id="ad-reech"}
 
 ```{.python code-line-numbers="3"}
-ad.sample_rate = 96_000
+ad.sample_rate = 48_000
 
 vs = ad.get_value()
 ```
@@ -110,7 +110,7 @@ vs = ad.get_value()
 ## AudioData (rééchantillonnage) { auto-animate=true  auto-animate-id="ad-reech"}
 
 ```{.python code-line-numbers="3"}
-ad.sample_rate = 96_000
+ad.sample_rate = 48_000
 
 ad.write(af.path.parent / "output")
 ```

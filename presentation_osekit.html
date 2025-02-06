@@ -1088,8 +1088,8 @@
 <span id="cb14-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> af.path.parent.glob(<span class="st">"*.wav"</span>)</span>
 <span id="cb14-4" class="hljs-ln-code"><a href=""></a>    ]</span>
 <span id="cb14-5" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb14-6" class="hljs-ln-code"><a href=""></a>begin <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">-</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
-<span id="cb14-7" class="hljs-ln-code"><a href=""></a>end <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">+</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb14-6" class="hljs-ln-code"><a href=""></a>begin <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">-</span> Timedelta(seconds <span class="op">=</span> <span class="dv">5</span>)</span>
+<span id="cb14-7" class="hljs-ln-code"><a href=""></a>end <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">+</span> Timedelta(seconds <span class="op">=</span> <span class="dv">5</span>)</span>
 <span id="cb14-8" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb14-9" class="hljs-ln-code"><a href=""></a>ad <span class="op">=</span> AudioData.from_files(files<span class="op">=</span>afs, begin<span class="op">=</span>begin, end<span class="op">=</span>end)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
@@ -1103,8 +1103,8 @@
 <span id="cb15-3" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> af.path.parent.glob(<span class="st">"*.wav"</span>)</span>
 <span id="cb15-4" class="hljs-ln-code"><a href=""></a>    ]</span>
 <span id="cb15-5" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb15-6" class="hljs-ln-code"><a href=""></a>begin <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">-</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
-<span id="cb15-7" class="hljs-ln-code"><a href=""></a>end <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">+</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb15-6" class="hljs-ln-code"><a href=""></a>begin <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">-</span> Timedelta(seconds <span class="op">=</span> <span class="dv">5</span>)</span>
+<span id="cb15-7" class="hljs-ln-code"><a href=""></a>end <span class="op">=</span> afs[<span class="dv">1</span>].begin <span class="op">+</span> Timedelta(seconds <span class="op">=</span> <span class="dv">5</span>)</span>
 <span id="cb15-8" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb15-9" class="hljs-ln-code"><a href=""></a>ad <span class="op">=</span> AudioData.from_files(files<span class="op">=</span>afs, begin<span class="op">=</span>begin, end<span class="op">=</span>end)</span>
 <span id="cb15-10" class="hljs-ln-code"><a href=""></a></span>
@@ -1113,21 +1113,21 @@
 </section>
 <section id="audiodata-rééchantillonnage" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-reech">
 <h2 data-id="quarto-animate-title">AudioData (rééchantillonnage)</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb16-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb16-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">48_000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><strong>=&gt;</strong> Seul l’<strong>objet</strong> <code>AudioData</code> est modifié <em>(on ne touche pas au fichier)</em></p>
 </div>
 </section>
 <section id="audiodata-rééchantillonnage-1" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-reech">
 <h2 data-id="quarto-animate-title">AudioData (rééchantillonnage)</h2>
-<div class="sourceCode" id="cb17" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb17-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span>
+<div class="sourceCode" id="cb17" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb17-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">48_000</span></span>
 <span id="cb17-2" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb17-3" class="hljs-ln-code"><a href=""></a>vs <span class="op">=</span> ad.get_value()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt;</strong> L’audio est <strong>rééchantillonné à la demande</strong> <em>(et rien n’a été écrit en dur)</em></p>
 </section>
 <section id="audiodata-rééchantillonnage-2" class="slide level2" data-auto-animate="true" data-auto-animate-id="ad-reech">
 <h2 data-id="quarto-animate-title">AudioData (rééchantillonnage)</h2>
-<div class="sourceCode" id="cb18" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb18-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">96_000</span></span>
+<div class="sourceCode" id="cb18" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb18-1" class="hljs-ln-code"><a href=""></a>ad.sample_rate <span class="op">=</span> <span class="dv">48_000</span></span>
 <span id="cb18-2" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb18-3" class="hljs-ln-code"><a href=""></a>ad.write(af.path.parent <span class="op">/</span> <span class="st">"output"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>=&gt; Ecriture</strong> de l’<code>AudioData</code> :</p>
@@ -1162,7 +1162,7 @@
 <span id="cb19-4" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb19-5" class="hljs-ln-code"><a href=""></a>sft <span class="op">=</span> ShortTimeFFT(</span>
 <span id="cb19-6" class="hljs-ln-code"><a href=""></a>    win<span class="op">=</span>hamming(<span class="dv">1_024</span>),</span>
-<span id="cb19-7" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">1_024</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.95</span>)), </span>
+<span id="cb19-7" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">1_024</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.8</span>)), </span>
 <span id="cb19-8" class="hljs-ln-code"><a href=""></a>    fs<span class="op">=</span>ad.sample_rate, </span>
 <span id="cb19-9" class="hljs-ln-code"><a href=""></a>    mfft<span class="op">=</span><span class="dv">1_024</span></span>
 <span id="cb19-10" class="hljs-ln-code"><a href=""></a>    )</span>
@@ -1180,7 +1180,7 @@
 <span id="cb20-4" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb20-5" class="hljs-ln-code"><a href=""></a>sft <span class="op">=</span> ShortTimeFFT(</span>
 <span id="cb20-6" class="hljs-ln-code"><a href=""></a>    win<span class="op">=</span>hamming(<span class="dv">1_024</span>),</span>
-<span id="cb20-7" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">1_024</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.95</span>)), </span>
+<span id="cb20-7" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">1_024</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.8</span>)), </span>
 <span id="cb20-8" class="hljs-ln-code"><a href=""></a>    fs<span class="op">=</span>ad.sample_rate, </span>
 <span id="cb20-9" class="hljs-ln-code"><a href=""></a>    mfft<span class="op">=</span><span class="dv">1_024</span></span>
 <span id="cb20-10" class="hljs-ln-code"><a href=""></a>    )</span>
@@ -1192,6 +1192,37 @@
 </section>
 <section id="spectrogramme" class="slide level2" data-auto-animate="true" data-auto-animate-id="spectro">
 <h2 data-id="quarto-animate-title">Spectrogramme</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb21-1" class="hljs-ln-code"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb21-3" class="hljs-ln-code"><a href=""></a>sd.plot()</span>
+<span id="cb21-4" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p><strong>=&gt;</strong> Les <strong>spectrogrammes</strong> sont tracés sur la <span class="primary">figure par défaut</span> de la version <em>legacy</em>.</p>
+</div>
+</section>
+<section id="spectrogramme-1" class="slide level2" data-auto-animate="true" data-auto-animate-id="spectro">
+<h2 data-id="quarto-animate-title">Spectrogramme</h2>
+<div class="sourceCode" id="cb22" data-code-line-numbers="1,3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb22-1" class="hljs-ln-code"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb22-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb22-3" class="hljs-ln-code"><a href=""></a>sd.plot(ax<span class="op">=</span>ax)</span>
+<span id="cb22-4" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> On peut spécifier un <code>Axes</code> sur lequel tracer le <strong>spectrogramme</strong>.</p>
+</section>
+<section id="spectrogramme-2" class="slide level2" data-auto-animate="true" data-auto-animate-id="spectro">
+<h2 data-id="quarto-animate-title">Spectrogramme</h2>
+<div class="sourceCode" id="cb23" data-code-line-numbers="1-7|9-11|12"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb23-1" class="hljs-ln-code"><a href=""></a>ad2 <span class="op">=</span> AudioData.from_files(</span>
+<span id="cb23-2" class="hljs-ln-code"><a href=""></a>    files<span class="op">=</span>afs, </span>
+<span id="cb23-3" class="hljs-ln-code"><a href=""></a>    begin<span class="op">=</span>ad.end, </span>
+<span id="cb23-4" class="hljs-ln-code"><a href=""></a>    end<span class="op">=</span>ad.end<span class="op">+</span>ad.duration</span>
+<span id="cb23-5" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb23-6" class="hljs-ln-code"><a href=""></a>ad2.sample_rate <span class="op">=</span> ad.sample_rate</span>
+<span id="cb23-7" class="hljs-ln-code"><a href=""></a>sd2 <span class="op">=</span> SpectroData.from_audio_data(data<span class="op">=</span>ad2, fft<span class="op">=</span>sft)</span>
+<span id="cb23-8" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb23-9" class="hljs-ln-code"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb23-10" class="hljs-ln-code"><a href=""></a>sd.plot(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
+<span id="cb23-11" class="hljs-ln-code"><a href=""></a>sd2.plot(ax<span class="op">=</span>axs[<span class="dv">1</span>])</span>
+<span id="cb23-12" class="hljs-ln-code"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> Exemple pour <strong>2 spectrogrammes</strong> consécutifs sur <strong>une même figure</strong>.</p>
 
 </section></section>
     </div>
