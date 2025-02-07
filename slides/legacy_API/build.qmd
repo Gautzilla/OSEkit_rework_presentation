@@ -9,7 +9,7 @@ dataset = Dataset(
     depth = 0,
 )
 
-dataset.build(date_template = r"%y%m%d%H%M%S", force_upload=True)
+dataset.build(date_template = r"%y%m%d%H%M%S")
 ```
 
 . . .

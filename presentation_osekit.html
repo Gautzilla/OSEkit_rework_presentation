@@ -241,15 +241,15 @@
 <li class="fragment">Open-source</li>
 <li class="fragment">Travail à l’échelle d’un <strong>dataset</strong>
 <ul>
-<li class="fragment">Données
+<li class="fragment"><strong>Données</strong>
 <ul>
 <li class="fragment"><span class="primary">Audio</span></li>
 <li class="fragment"><span class="secondary">Auxiliaires</span> (GPS, météo…)</li>
 </ul></li>
-<li class="fragment">Métadonnées
+<li class="fragment"><strong>Métadonnées</strong>
 <ul>
-<li class="fragment">Capteur</li>
-<li class="fragment">Déploiement</li>
+<li class="fragment"><span class="primary">Capteur</span></li>
+<li class="fragment"><span class="secondary">Déploiement</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -685,7 +685,7 @@
 </section></section>
 <section>
 <section id="public-api-legacy" class="title-slide slide level1 center">
-<h1>Public API (legacy)</h1>
+<h1>Public API <em>(legacy)</em></h1>
 
 </section>
 <section id="section" class="slide level2">
@@ -738,7 +738,7 @@
 <span id="cb1-6"><a href=""></a>    depth <span class="op">=</span> <span class="dv">0</span>,</span>
 <span id="cb1-7"><a href=""></a>)</span>
 <span id="cb1-8"><a href=""></a></span>
-<span id="cb1-9"><a href=""></a>dataset.build(date_template <span class="op">=</span> <span class="vs">r"%y%m</span><span class="sc">%d</span><span class="vs">%H%M%S"</span>, force_upload<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href=""></a>dataset.build(date_template <span class="op">=</span> <span class="vs">r"%y%m</span><span class="sc">%d</span><span class="vs">%H%M%S"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -858,7 +858,7 @@
 </section></section>
 <section>
 <section id="core-api-prototype" class="title-slide slide level1 center">
-<h1>Core API (prototype)</h1>
+<h1>Core API <em>(prototype)</em></h1>
 
 </section>
 <section id="objectifs" class="slide level2" data-auto-animate="true">
@@ -1031,11 +1031,11 @@
 <div class="sourceCode" id="cb9" style="margin-bottom:50px;" data-code-line-numbers="1-2-4|6-7,9|6,8-9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="im">from</span> OSmOSE.data.audio_file <span class="im">import</span> AudioFile</span>
 <span id="cb9-2"><a href=""></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb9-3"><a href=""></a></span>
-<span id="cb9-4"><a href=""></a>audio_folder <span class="op">=</span> Path(<span class="st">"C:\Users</span><span class="ch">\b</span><span class="st">erthoga\Documents\Datasets\example_dataset"</span>)</span>
+<span id="cb9-4"><a href=""></a>audio_folder <span class="op">=</span> Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\example_dataset"</span>)</span>
 <span id="cb9-5"><a href=""></a></span>
 <span id="cb9-6"><a href=""></a>af <span class="op">=</span> AudioFile(</span>
-<span id="cb9-7"><a href=""></a>    path<span class="op">=</span>audio_folder <span class="op">/</span> <span class="st">"7189.230405154906.wav"</span>),</span>
-<span id="cb9-8"><a href=""></a>    strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>,</span>
+<span id="cb9-7"><a href=""></a>    path <span class="op">=</span> audio_folder <span class="op">/</span> <span class="st">"7189.230405154906.wav"</span>,</span>
+<span id="cb9-8"><a href=""></a>    strptime_format <span class="op">=</span> <span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>,</span>
 <span id="cb9-9"><a href=""></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb10" data-code-line-numbers="1-2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href=""></a>example_dataset</span>
 <span id="cb10-2"><a href=""></a>├── 7189.230405154906.wav</span>

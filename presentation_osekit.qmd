@@ -21,7 +21,7 @@ filters:
 
 {{< include slides/utilisation_osekit.qmd >}}
 
-# Public API (legacy)
+# Public API *(legacy)*
 
 {{< include slides/legacy_API/presentation.qmd >}}
 
@@ -31,7 +31,7 @@ filters:
 
 {{< include slides/legacy_API/generate.qmd >}}
 
-# Core API (prototype)
+# Core API *(prototype)*
 
 {{< include slides/core_API/presentation.qmd >}}
 

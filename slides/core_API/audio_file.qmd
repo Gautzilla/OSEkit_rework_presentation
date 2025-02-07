@@ -4,11 +4,11 @@
 from OSmOSE.data.audio_file import AudioFile
 from pathlib import Path
 
-audio_folder = Path("C:\Users\berthoga\Documents\Datasets\example_dataset")
+audio_folder = Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset")
 
 af = AudioFile(
-    path=audio_folder / "7189.230405154906.wav"),
-    strptime_format="%y%m%d%H%M%S",
+    path = audio_folder / "7189.230405154906.wav",
+    strptime_format = "%y%m%d%H%M%S",
     )
 ```
 

@@ -38,10 +38,10 @@
 :::{.r-stack}
 - Open-source
 - Travail à l'échelle d'un **dataset**
-    - Données
+    - **Données**
         - [Audio]{.primary}
         - [Auxiliaires]{.secondary} (GPS, météo...)
-    - Métadonnées
-        - Capteur
-        - Déploiement
+    - **Métadonnées**
+        - [Capteur]{.primary}
+        - [Déploiement]{.secondary}
 :::
