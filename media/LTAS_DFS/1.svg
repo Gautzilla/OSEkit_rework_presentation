@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="211.00012mm"
-   height="118.03348mm"
-   viewBox="0 0 211.00012 118.03348"
+   width="211.00011mm"
+   height="176.5502mm"
+   viewBox="0 0 211.00011 176.5502"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
@@ -25,20 +25,20 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="0.35945918"
-     inkscape:cx="4487.2968"
-     inkscape:cy="-432.59433"
+     inkscape:zoom="1.7882752"
+     inkscape:cx="6644.3914"
+     inkscape:cy="317.9041"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
-     inkscape:window-x="-8"
+     inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:page
        x="0"
        y="0"
-       width="211.00012"
-       height="118.03348"
+       width="211.00011"
+       height="176.5502"
        id="page80"
        margin="0"
        bleed="0"
@@ -67,9 +67,10 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-1813.3684,-94.451668)">
+     transform="translate(-1813.3684,-35.934948)">
     <g
-       id="g1">
+       id="g1"
+       transform="translate(0,2.840568e-5)">
       <rect
          style="fill:#000000;fill-opacity:0;stroke:#f1c40f;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
          id="rect1"

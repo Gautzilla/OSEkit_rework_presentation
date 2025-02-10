@@ -64,25 +64,49 @@ ltas = LTASData.from_spectro_data(
     )
 ```
 
-::: {.r-stack}
+::: {.r-stack .smaller}
 
-![](media\LTAS_DFS\1.svg){.fragment .fade-in-then-out fig-align=center}
+![](media\LTAS_DFS\1.svg){.fragment .fade-in-then-out fig-align=center height=400px}
 
-![](media\LTAS_DFS\2.svg){.fragment .fade-in-then-out fig-align=center}
+![](media\LTAS_DFS\2.svg){.fragment .fade-in-then-out fig-align=center height=400px}
 
-![](media\LTAS_DFS\3.svg){.fragment .fade-in-then-out fig-align=center}
+![](media\LTAS_DFS\3.svg){.fragment .fade-in-then-out fig-align=center height=400px}
 
-![](media\LTAS_DFS\4.svg){.fragment .fade-in-then-out fig-align=center}
+![](media\LTAS_DFS\4.svg){.fragment .fade-in-then-out fig-align=center height=400px}
 
-![](media\LTAS_DFS\5.svg){.fragment .fade-in-then-out fig-align=center}
+![](media\LTAS_DFS\5.svg){.fragment .fade-in-then-out fig-align=center height=400px}
 
-![](media\LTAS_DFS\6.svg){.fragment .fade-in-then-out fig-align=center}
+![](media\LTAS_DFS\6.svg){.fragment .fade-in-then-out fig-align=center height=400px}
 
-![](media\LTAS_DFS\7.svg){.fragment .fade-in-then-out fig-align=center}
+![](media\LTAS_DFS\7.svg){.fragment .fade-in-then-out fig-align=center height=400px}
 
-![](media\LTAS_DFS\8.svg){.fragment .fade-in-then-out fig-align=center}
+![](media\LTAS_DFS\8.svg){.fragment .fade-in-then-out fig-align=center height=400px}
 
-![](media\LTAS_DFS\9.svg){.fragment fig-align=center}
+![](media\LTAS_DFS\9.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\10.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\11.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\12.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\13.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\14.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\15.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\16.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\17.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\18.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\19.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\20.svg){.fragment .fade-in-then-out fig-align=center height=400px}
+
+![](media\LTAS_DFS\21.svg){.fragment fig-align=center height=400px}
 
 :::
 
