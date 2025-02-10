@@ -52,8 +52,9 @@ ads.write(audio_folder / "reshaped")
 
 ## SpectroDataset { auto-animate=true  auto-animate-id="sds"}
 
-```{.python code-line-numbers="3-5,9|3,6-9|11|13-18|1,20|22" style="font-size:85%"}
+```{.python code-line-numbers="4-6,10|2,4,7-10|12|14-19|1,21|23" style="font-size:85%"}
 from OSmOSE.data.spectro_dataset import SpectroDataset
+from pandas import Timestamp
 
 ads = AudioDataset.from_folder(
     folder = audio_folder,
