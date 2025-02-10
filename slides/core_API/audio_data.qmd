@@ -1,6 +1,6 @@
 ## AudioData { auto-animate=true  auto-animate-id="ad-un-fichier"}
 
-```{.python code-line-numbers="1|4-5,7|2,4,6-7" style="margin-bottom:50px;"}
+```{.python code-line-numbers="1|4-5,7|2,4,6-7"}
 from OSmOSE.data.audio_data import AudioData
 from pandas import Timedelta
 
@@ -9,6 +9,14 @@ ad = AudioData.from_files(
     end=af.begin + Timedelta(seconds=2)
     )
 ```
+
+::: {.r-stack}
+![](media\audio_data\ex1_1.svg){.fragment .fade-in-then-out fig-align=center height=250px}
+
+![](media\audio_data\ex1_2.svg){.fragment .fade-in-then-out fig-align=center height=250px}
+
+![](media\audio_data\ex1_3.svg){.fragment fig-align=center height=250px}
+:::
 
 ::: {.fragment}
 **=>** Seules les **métadonnées** du fichier ont été lues.
@@ -32,7 +40,26 @@ vs = ad.get_value()
 
 ## AudioData (plusieurs fichiers) { auto-animate=true  auto-animate-id="ad-n-fichiers"}
 
-```{.python code-line-numbers="1-4|6" style="margin-bottom:50px;"}
+```{.python code-line-numbers="1-4|6"}
+afs = [
+    AudioFile(f, strptime_format="%y%m%d%H%M%S") 
+    for f in audio_folder.glob("*.wav")
+    ]
+
+ad = AudioData.from_files(files=afs)
+```
+
+::: {.r-stack}
+![](media\audio_data\ex2_1.svg){.fragment .fade-in-then-out fig-align=center height=350px}
+
+![](media\audio_data\ex2_2.svg){.fragment .fade-in-then-out fig-align=center height=350px}
+
+![](media\audio_data\ex2_3.svg){.fragment fig-align=center height=350px}
+:::
+
+## AudioData (plusieurs fichiers) { auto-animate=true  auto-animate-id="ad-n-fichiers"}
+
+```{.python}
 afs = [
     AudioFile(f, strptime_format="%y%m%d%H%M%S") 
     for f in audio_folder.glob("*.wav")
@@ -48,7 +75,7 @@ ad = AudioData.from_files(files=afs)
 
 ## AudioData (plusieurs fichiers) { auto-animate=true  auto-animate-id="ad-n-fichiers"}
 
-```{.python code-line-numbers="6-7|9" style="margin-bottom:50px;"}
+```{.python code-line-numbers="6-7|9" style="margin-bottom:0px;"}
 afs = [
     AudioFile(f, strptime_format="%y%m%d%H%M%S") 
     for f in audio_folder.glob("*.wav")
@@ -60,11 +87,29 @@ end = afs[1].begin + Timedelta(seconds = 5)
 ad = AudioData.from_files(files=afs, begin=begin, end=end)
 ```
 
-::: {.fragment}
+::: {.r-stack}
+![](media\audio_data\ex3_1.svg){.fragment .fade-in-then-out fig-align=center height=280px}
+
+![](media\audio_data\ex3_2.svg){.fragment .fade-in-then-out fig-align=center height=280px}
+
+![](media\audio_data\ex3_3.svg){.fragment fig-align=center height=280px}
+:::
+
+## AudioData (plusieurs fichiers) { auto-animate=true  auto-animate-id="ad-n-fichiers"}
+
+```{.python}
+afs = [
+    AudioFile(f, strptime_format="%y%m%d%H%M%S") 
+    for f in audio_folder.glob("*.wav")
+    ]
+
+begin = afs[1].begin - Timedelta(seconds = 5)
+end = afs[1].begin + Timedelta(seconds = 5)
+
+ad = AudioData.from_files(files=afs, begin=begin, end=end)
+```
 
 **=>** Création simple d'objets `AudioData` sans se soucier des [fichiers audio]{.primary}.
-
-:::
 
 ## AudioData (plusieurs fichiers) { auto-animate=true  auto-animate-id="ad-n-fichiers"}
 
