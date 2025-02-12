@@ -38,7 +38,7 @@ ltas_sd = SpectroData.from_audio_data(ltas_data, ltas_sft)
 print(f"{ltas_sd.nb_bytes/1e9:_} Gb")
 ```
 
-**=>** La matrice seule représente ~`17 Gb` de données...
+**=>** La matrice seule représente ~`34 Gb` de données...
 
 ## LTAS {auto-animate="true" auto-animate-id="ltasData"}
 

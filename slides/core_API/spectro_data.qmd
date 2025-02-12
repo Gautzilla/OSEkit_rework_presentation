@@ -79,7 +79,7 @@ sd.write(audio_folder / "npz")
 from OSmOSE.core_api.spectro_file import SpectroFile
 
 sf_1 = SpectroFile(
-    Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset\npz\2023_04_05_16_49_01.npz"),
+    Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset\npz\2023_04_05_16_49_01_000000.npz"),
     strptime_format = "%Y_%m_%d_%H_%M_%S"
     )
 ```
