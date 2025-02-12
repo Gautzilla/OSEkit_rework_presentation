@@ -1,7 +1,7 @@
 ## AudioData { auto-animate=true  auto-animate-id="ad-un-fichier"}
 
 ```{.python code-line-numbers="1|4-5,7|2,4,6-7"}
-from OSmOSE.data.audio_data import AudioData
+from OSmOSE.core_api.audio_data import AudioData
 from pandas import Timedelta
 
 ad = AudioData.from_files(
@@ -25,7 +25,7 @@ ad = AudioData.from_files(
 ## AudioData (un seul fichier) { auto-animate=true  auto-animate-id="ad-un-fichier"}
 
 ```{.python code-line-numbers="9" style="margin-bottom:50px;"}
-from OSmOSE.data.audio_data import AudioData
+from OSmOSE.core_api.audio_data import AudioData
 from pandas import Timedelta
 
 ad = AudioData.from_files(

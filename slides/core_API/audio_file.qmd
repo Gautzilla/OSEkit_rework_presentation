@@ -1,7 +1,7 @@
 ## AudioFile {auto-animate=true}
 
 ```{.python code-line-numbers="1-2-4|6-7,9|6,8-9" style="margin-bottom:50px;"}
-from OSmOSE.data.audio_file import AudioFile
+from OSmOSE.core_api.audio_file import AudioFile
 from pathlib import Path
 
 audio_folder = Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset")
