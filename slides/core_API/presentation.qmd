@@ -2,7 +2,7 @@
 
 - Accès à la donnée audio basée sur des **timestamps**
 - Découplage [fichier audio]{.primary} / [donnée audio]{.secondary}
-- Manipulation transparante de donnée [audio]{.primary} et [auxiliaire]{.secondary}
+- Manipulation transparente de donnée [audio]{.primary} et [auxiliaire]{.secondary}
 
 ## Objectifs {auto-animate=true}
 
