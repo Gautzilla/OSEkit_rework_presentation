@@ -18,7 +18,7 @@ Fonctionne en **3 étapes**:
 ::: {.small-table style="display: flex; justify-content: center; align-items: center; height: 80%;"}
 |**Build**|**Initialize**|**Generate**|
 |:---|:---|:---|
-|<br>Analyse l'audio<br>Classe l'audio<br>Crée des csv de métadonnée|<br>Découpe l'audio<br>Rééchantillonne l'audio|<br>Calcule les fft<br>Exporte les spectrogrammes|
+|<br>[Analyse]{.primary} l'[audio]{.secondary}<br>[Classe]{.primary} l'[audio]{.secondary}<br>[Crée des csv]{.primary} de [métadonnées]{.secondary}|<br>[Découpe]{.primary} l'[audio]{.secondary}<br>[Rééchantillonne]{.primary} l'[audio]{.secondary}|<br>[Calcule]{.primary} les [FFT]{.secondary}<br>[Exporte]{.primary} les [spectrogrammes]{.secondary}|
 
-: {tbl-colwidths="[33,33,33]"}
+: {tbl-colwidths="[35,30,35]"}
 :::
