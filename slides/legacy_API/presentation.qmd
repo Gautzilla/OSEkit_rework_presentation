@@ -4,7 +4,7 @@ Version *legacy*:
 
 - Ancienne version d'**OSEkit**
 - Ne fait *pour l'instant* pas appel à la **Core API**
-- Pas très **SOLID**
+- Pas très **SOLID**/**DRY**/**KISS**...
 - *Helpers* sur un repo `datarmor-toolkit`
 
 . . .
