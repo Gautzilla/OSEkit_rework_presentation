@@ -24,9 +24,9 @@ La **Core API** fonctionne en local, mais :
 ## Echéances (*plus* long terme) {.smaller}
 
 - Intégration de **données auxiliaires** :
-    - **Jointure** entre les différents héritages de `BaseData` pensés en amont
-    - Réflexion à avoir sur le niveau de **généralisation** des objets de données auxiliaires
+    - **Jointure** entre les différents héritages de `BaseData` pensés en amont (classe `Event`)
+    - Réflexion à avoir sur le niveau de **généralisation** des [classes]{.primary} de **données auxiliaires**
 - Classes d'[analyse]{.primary}/[traitement]{.secondary} qui **composent** avec les héritages de `BaseData`
 - Communication avec **APLOSE**
     - Génération de spectrogrammes **à la volée**
-    - **Annotations** : [Données OSEkit]{.primary} (héritées de `BaseData`) qui peuvent être **croisées** à [tout autre type de donnéés]{.secondary}
+    - **Annotations** : [Données OSEkit]{.primary} (héritées de `BaseData`, donc d'`Event`) qui peuvent être **croisées** à [tout autre type de donnéés]{.secondary}
