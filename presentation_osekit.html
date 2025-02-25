@@ -1597,6 +1597,34 @@
 <span id="cb38-21" class="hljs-ln-code"><a href=""></a>sds <span class="op">=</span> SpectroDataset.from_audio_dataset(ads, sft)</span>
 <span id="cb38-22" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb38-23" class="hljs-ln-code"><a href=""></a>sds.save_spectrogram(audio_folder <span class="op">/</span> <span class="st">"spectro"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="event" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Event</h2>
+<p>Les objets situés dans le temps (<code>BaseFile</code>, <code>BaseItem</code>, <code>BaseData</code>, <code>BaseDataset</code>) <strong>héritent</strong> tous d’une même <span class="primary">classe</span> <code>Event</code>:</p>
+<ul>
+<li class="fragment">Opérations <strong>mutualisées</strong></li>
+<li class="fragment">Possibilité de <strong>croiser</strong> les différentes données
+<ul>
+<li class="fragment"><strong>Tri</strong> de <span class="primary">spectrogrammes</span> par <span class="secondary">fichier audio</span></li>
+<li class="fragment"><strong>Croisement</strong> avec <span class="primary">données auxiliaires</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="event-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Event</h2>
+<p><strong>Tri</strong> de <span class="primary">spectrogrammes</span> par <span class="secondary">fichier audio</span> :</p>
+<div class="sourceCode" id="cb39" data-code-line-numbers="1-5|7|9-12"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb39-1" class="hljs-ln-code"><a href=""></a>ads <span class="op">=</span> AudioDataset.from_folder(</span>
+<span id="cb39-2" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> audio_folder,</span>
+<span id="cb39-3" class="hljs-ln-code"><a href=""></a>    strptime_format <span class="op">=</span> <span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>,</span>
+<span id="cb39-4" class="hljs-ln-code"><a href=""></a>    data_duration <span class="op">=</span> Timedelta(seconds <span class="op">=</span> <span class="dv">10</span>),</span>
+<span id="cb39-5" class="hljs-ln-code"><a href=""></a>)</span>
+<span id="cb39-6" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb39-7" class="hljs-ln-code"><a href=""></a>sds <span class="op">=</span> SpectroDataset.from_audio_dataset(ads, sft)</span>
+<span id="cb39-8" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb39-9" class="hljs-ln-code"><a href=""></a>spectro_sorted_by_audio_file <span class="op">=</span> {</span>
+<span id="cb39-10" class="hljs-ln-code"><a href=""></a>    f: [s <span class="cf">for</span> s <span class="kw">in</span> sds.data <span class="cf">if</span> s.overlaps(f)]</span>
+<span id="cb39-11" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> afs</span>
+<span id="cb39-12" class="hljs-ln-code"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="outro" class="title-slide slide level1 center">

@@ -47,6 +47,8 @@ filters:
 
 {{< include slides/core_API/dataset.qmd >}}
 
+{{< include slides/core_API/event.qmd >}}
+
 # Outro
 
 {{< include slides/outro.qmd >}}
