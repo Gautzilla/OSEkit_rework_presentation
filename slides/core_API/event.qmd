@@ -1,0 +1,64 @@
+## Event {auto-animate=true}
+
+Les objets situés dans le temps (`BaseFile`, `BaseItem`, `BaseData`, `BaseDataset`) **héritent** tous d'une même [classe]{.primary} `Event`:
+
+- Opérations **mutualisées**
+- Possibilité de **croiser** les différentes données
+    - **Tri** de [spectrogrammes]{.primary} par [fichier audio]{.secondary}
+    - **Croisement** avec [données auxiliaires]{.primary}
+
+
+## Event {auto-animate=true .smaller}
+
+`Event.overlaps` : Permet de **croiser** des `Event`
+
+- Utilisé dans le *back* de la **core_API**
+- Utilisable pour [croiser]{.primary} des [données]{.secondary}
+
+. . .
+
+```{.python code-line-numbers="1,4-5,11|2,6-10|13-16|18|19|21-23"}
+from OSmOSE.core_api.event import Event
+from pandas import date_range
+
+events = [
+    Event(begin = b, end = b + Timedelta(seconds = 1))
+    for b in date_range(
+        start = Timestamp("2020-01-01 00:00:00"),
+        end = Timestamp("2020-01-01 00:00:59"),
+        freq = Timedelta(seconds = 1)
+    )
+]
+
+main_event = Event(
+    begin = Timestamp("2020-01-01 00:00:25"),
+    end = Timestamp("2020-01-01 00:00:35")
+    )
+
+main_event.overlaps(events[0])
+main_event.overlaps(events[len(events)//2])
+
+overlapping_events = [
+    event for event in events if event.overlaps(main_event)
+]
+
+```
+
+## Event {auto-animate=true}
+
+**Tri** de [spectrogrammes]{.primary} par [fichier audio]{.secondary} :
+
+```{.python code-line-numbers="1-5|7|9-12" }
+ads = AudioDataset.from_folder(
+    folder = audio_folder,
+    strptime_format = "%y%m%d%H%M%S",
+    data_duration = Timedelta(seconds = 10),
+)
+
+sds = SpectroDataset.from_audio_dataset(ads, sft)
+
+spectro_sorted_by_audio_file = {
+    f: [s for s in sds.data if s.overlaps(f)]
+    for f in afs
+}
+```

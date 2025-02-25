@@ -1610,21 +1610,54 @@
 </ul></li>
 </ul>
 </section>
-<section id="event-1" class="slide level2" data-auto-animate="true">
+<section id="event-1" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Event</h2>
+<p><code>Event.overlaps</code> : Permet de <strong>croiser</strong> des <code>Event</code></p>
+<ul>
+<li class="fragment">Utilisé dans le <em>back</em> de la <strong>core_API</strong></li>
+<li class="fragment">Utilisable pour <span class="primary">croiser</span> des <span class="secondary">données</span></li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb39" data-code-line-numbers="1,4-5,11|2,6-10|13-16|18|19|21-23"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb39-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.core_api.event <span class="im">import</span> Event</span>
+<span id="cb39-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> date_range</span>
+<span id="cb39-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb39-4" class="hljs-ln-code"><a href=""></a>events <span class="op">=</span> [</span>
+<span id="cb39-5" class="hljs-ln-code"><a href=""></a>    Event(begin <span class="op">=</span> b, end <span class="op">=</span> b <span class="op">+</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>))</span>
+<span id="cb39-6" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> b <span class="kw">in</span> date_range(</span>
+<span id="cb39-7" class="hljs-ln-code"><a href=""></a>        start <span class="op">=</span> Timestamp(<span class="st">"2020-01-01 00:00:00"</span>),</span>
+<span id="cb39-8" class="hljs-ln-code"><a href=""></a>        end <span class="op">=</span> Timestamp(<span class="st">"2020-01-01 00:00:59"</span>),</span>
+<span id="cb39-9" class="hljs-ln-code"><a href=""></a>        freq <span class="op">=</span> Timedelta(seconds <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb39-10" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb39-11" class="hljs-ln-code"><a href=""></a>]</span>
+<span id="cb39-12" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb39-13" class="hljs-ln-code"><a href=""></a>main_event <span class="op">=</span> Event(</span>
+<span id="cb39-14" class="hljs-ln-code"><a href=""></a>    begin <span class="op">=</span> Timestamp(<span class="st">"2020-01-01 00:00:25"</span>),</span>
+<span id="cb39-15" class="hljs-ln-code"><a href=""></a>    end <span class="op">=</span> Timestamp(<span class="st">"2020-01-01 00:00:35"</span>)</span>
+<span id="cb39-16" class="hljs-ln-code"><a href=""></a>    )</span>
+<span id="cb39-17" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb39-18" class="hljs-ln-code"><a href=""></a>main_event.overlaps(events[<span class="dv">0</span>])</span>
+<span id="cb39-19" class="hljs-ln-code"><a href=""></a>main_event.overlaps(events[<span class="bu">len</span>(events)<span class="op">//</span><span class="dv">2</span>])</span>
+<span id="cb39-20" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb39-21" class="hljs-ln-code"><a href=""></a>overlapping_events <span class="op">=</span> [</span>
+<span id="cb39-22" class="hljs-ln-code"><a href=""></a>    event <span class="cf">for</span> event <span class="kw">in</span> events <span class="cf">if</span> event.overlaps(main_event)</span>
+<span id="cb39-23" class="hljs-ln-code"><a href=""></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="event-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Event</h2>
 <p><strong>Tri</strong> de <span class="primary">spectrogrammes</span> par <span class="secondary">fichier audio</span> :</p>
-<div class="sourceCode" id="cb39" data-code-line-numbers="1-5|7|9-12"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb39-1" class="hljs-ln-code"><a href=""></a>ads <span class="op">=</span> AudioDataset.from_folder(</span>
-<span id="cb39-2" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> audio_folder,</span>
-<span id="cb39-3" class="hljs-ln-code"><a href=""></a>    strptime_format <span class="op">=</span> <span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>,</span>
-<span id="cb39-4" class="hljs-ln-code"><a href=""></a>    data_duration <span class="op">=</span> Timedelta(seconds <span class="op">=</span> <span class="dv">10</span>),</span>
-<span id="cb39-5" class="hljs-ln-code"><a href=""></a>)</span>
-<span id="cb39-6" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb39-7" class="hljs-ln-code"><a href=""></a>sds <span class="op">=</span> SpectroDataset.from_audio_dataset(ads, sft)</span>
-<span id="cb39-8" class="hljs-ln-code"><a href=""></a></span>
-<span id="cb39-9" class="hljs-ln-code"><a href=""></a>spectro_sorted_by_audio_file <span class="op">=</span> {</span>
-<span id="cb39-10" class="hljs-ln-code"><a href=""></a>    f: [s <span class="cf">for</span> s <span class="kw">in</span> sds.data <span class="cf">if</span> s.overlaps(f)]</span>
-<span id="cb39-11" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> afs</span>
-<span id="cb39-12" class="hljs-ln-code"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40" data-code-line-numbers="1-5|7|9-12"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb40-1" class="hljs-ln-code"><a href=""></a>ads <span class="op">=</span> AudioDataset.from_folder(</span>
+<span id="cb40-2" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> audio_folder,</span>
+<span id="cb40-3" class="hljs-ln-code"><a href=""></a>    strptime_format <span class="op">=</span> <span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>,</span>
+<span id="cb40-4" class="hljs-ln-code"><a href=""></a>    data_duration <span class="op">=</span> Timedelta(seconds <span class="op">=</span> <span class="dv">10</span>),</span>
+<span id="cb40-5" class="hljs-ln-code"><a href=""></a>)</span>
+<span id="cb40-6" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb40-7" class="hljs-ln-code"><a href=""></a>sds <span class="op">=</span> SpectroDataset.from_audio_dataset(ads, sft)</span>
+<span id="cb40-8" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb40-9" class="hljs-ln-code"><a href=""></a>spectro_sorted_by_audio_file <span class="op">=</span> {</span>
+<span id="cb40-10" class="hljs-ln-code"><a href=""></a>    f: [s <span class="cf">for</span> s <span class="kw">in</span> sds.data <span class="cf">if</span> s.overlaps(f)]</span>
+<span id="cb40-11" class="hljs-ln-code"><a href=""></a>    <span class="cf">for</span> f <span class="kw">in</span> afs</span>
+<span id="cb40-12" class="hljs-ln-code"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="outro" class="title-slide slide level1 center">
