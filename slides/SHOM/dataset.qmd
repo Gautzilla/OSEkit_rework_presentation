@@ -1,0 +1,35 @@
+## BaseDataset
+
+[Crée]{.primary}/[manipule]{.secondary} simultanément un jeu de `Data`
+
+::: {.r-stack}
+![](media\audio_dataset\ex1_1.svg){.fragment .fade-in-then-out fig-align=center height=280px}
+
+![](media\audio_dataset\ex1_2.svg){.fragment .fade-in-then-out fig-align=center height=280px}
+
+![](media\audio_dataset\ex1_3.svg){.fragment .fade-in-then-out fig-align=center height=280px}
+
+![](media\audio_dataset\ex1_4.svg){.fragment .fade-in-then-out fig-align=center height=280px}
+
+![](media\audio_dataset\ex1_5.svg){.fragment fig-align=center height=280px}
+:::
+
+## AudioDataset
+
+```{.python code-line-numbers="1,7,11|2,5,8|3,9,10"}
+from OSmOSE.core_api.audio_dataset import AudioDataset
+from pathlib import Path
+from pandas import Timedelta
+
+audio_folder = Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset")
+
+ads = AudioDataset.from_folder(
+    folder=audio_folder, 
+    strptime_format="%y%m%d%H%M%S",
+    data_duration=Timedelta(hours=2.5)
+    )
+```
+
+. . .
+
+![](media\audio_dataset\ex1_5.svg){fig-align=center height=280px}

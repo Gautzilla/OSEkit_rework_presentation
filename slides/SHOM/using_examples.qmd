@@ -1,0 +1,95 @@
+## Utilisation: segmentation { auto-animate=true  auto-animate-id="segmentation"}
+
+**Objectif** : [Ecrire]{.primary} des [fichiers audio]{.secondary} :
+
+- de `20 secondes` de **durée**
+- **entre** `17:00:00` et `18:00:00`
+- **échantillonnés** à `48 kHz`
+
+## Utilisation: segmentation { auto-animate=true  auto-animate-id="segmentation"}
+
+```{.python code-line-numbers="1,5-7"}
+from pandas import Timestamp
+ads = AudioDataset.from_folder(
+    folder=audio_folder, 
+    strptime_format="%y%m%d%H%M%S",
+    begin=Timestamp('2023-04-05 17:00:00'),
+    end=Timestamp('2023-04-05 18:00:00'),
+    data_duration=Timedelta(seconds=20)
+    )
+```
+
+**=>** Découpage temporel
+
+## Utilisation: segmentation { auto-animate=true  auto-animate-id="segmentation"}
+
+```{.python code-line-numbers="10"}
+from pandas import Timestamp
+ads = AudioDataset.from_folder(
+    folder=audio_folder, 
+    strptime_format="%y%m%d%H%M%S",
+    begin=Timestamp('2023-04-05 17:00:00'),
+    end=Timestamp('2023-04-05 18:00:00'),
+    data_duration=Timedelta(seconds=20)
+    )
+
+ads.sample_rate = 48_000
+```
+
+**=>** Rééchantillonnage
+
+## Utilisation: segmentation { auto-animate=true  auto-animate-id="segmentation"}
+
+```{.python code-line-numbers="12"}
+from pandas import Timestamp
+ads = AudioDataset.from_folder(
+    folder=audio_folder, 
+    strptime_format="%y%m%d%H%M%S",
+    begin=Timestamp('2023-04-05 17:00:00'),
+    end=Timestamp('2023-04-05 18:00:00'),
+    data_duration=Timedelta(seconds=20)
+    )
+
+ads.sample_rate = 48_000
+
+ads.write(audio_folder / "reshaped")
+```
+
+**=>** Export
+
+## Utilisation: spectros { auto-animate=true  auto-animate-id="spectrogrammes"}
+
+**=> Exemple complet** :
+
+- [Découpage]{.primary}
+- [Rééchantillonnage]{.secondary}
+- [Calcul des spectres]{.primary}
+- [Export des spectrogrammes]{.secondary}
+
+## Utilisation: spectros { auto-animate=true  auto-animate-id="spectrogrammes"}
+
+```{.python code-line-numbers="1-6|7|8-14|15|16-21|22|23" style="font-size:85%"}
+from OSmOSE.core_api.audio_dataset import AudioDataset
+from OSmOSE.core_api.spectro_dataset import SpectroDataset
+from pandas import Timestamp, Timedelta
+from scipy.signal import ShortTimeFFT
+from scipy.signal.windows import hamming
+from pathlib import Path
+audio_folder = Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset")
+ads = AudioDataset.from_folder(
+    folder = audio_folder,
+    strptime_format = "%y%m%d%H%M%S",
+    begin = Timestamp("2023-04-05 16:40:00"),
+    end = Timestamp("2023-04-05 17:00:00"),
+    data_duration = Timedelta(minutes = 1),
+)
+ads.sample_rate = 48_000
+sft = ShortTimeFFT(
+    win=hamming(1_024),
+    hop=round(1_024*(1-0.8)), 
+    fs=ads.sample_rate, 
+    mfft=1_024
+    )
+sds = SpectroDataset.from_audio_dataset(ads, sft)
+sds.save_spectrogram(audio_folder / "spectro")
+```

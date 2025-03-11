@@ -1,0 +1,68 @@
+## AudioData { auto-animate=true  auto-animate-id="audio_data"}
+
+```{.python code-line-numbers="8|11"}
+from OSmOSE.core_api.audio_dataset import AudioDataset
+from pathlib import Path
+from pandas import Timedelta
+
+ads = AudioDataset.from_folder(
+    folder=audio_folder, 
+    strptime_format="%y%m%d%H%M%S",
+    data_duration=Timedelta(seconds=10)
+    )
+
+ad = ads.data[200]
+```
+
+. . .
+
+**=>** Les objets `AudioData` ne sont que des **pointeurs** vers la [donnée audio]{.primary}.
+
+## AudioData { auto-animate=true  auto-animate-id="audio_data"}
+
+```{.python code-line-numbers="13"}
+from OSmOSE.core_api.audio_dataset import AudioDataset
+from pathlib import Path
+from pandas import Timedelta
+
+ads = AudioDataset.from_folder(
+    folder=Path(r"C:\Users\berthoga\Documents\Datasets\example_dataset"), 
+    strptime_format="%y%m%d%H%M%S",
+    data_duration=Timedelta(seconds=10)
+    )
+
+ad = ads.data[200]
+
+vs = ad.get_value()
+```
+
+**=>** Les objets `AudioData` ne sont que des **pointeurs** vers la [donnée audio]{.primary}.
+
+**=>** On accède au(x) fichier(s) **à la demande**.
+
+## AudioData { auto-animate=true  auto-animate-id="resample"}
+
+```{.python code-line-numbers="1|3"}
+ad.sample_rate = 500
+
+vs = ad.get_value()
+```
+
+**=>** On peut **rééchantillonner** de la [donnée audio]{.primary} **à la demande**.
+
+## AudioData { auto-animate=true  auto-animate-id="resample"}
+
+```{.python code-line-numbers="5"}
+ad.sample_rate = 500
+
+vs = ad.get_value()
+
+ad.write(audio_folder / "resampled")
+```
+
+**=>** On peut **écrire** l'`AudioData` sur le disque. Cela comprend :
+
+- L'[ouverture]{.primary}/[fermeture]{.secondary} du *(ou des)* fichier*(s)*
+- La [lecture]{.primary} de l'[audio]{.secondary}
+- Le [rééchantillonnage]{.primary} de l'[audio]{.secondary}
+- L'[écriture]{.primary} de l'[audio]{.secondary}

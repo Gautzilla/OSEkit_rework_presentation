@@ -1,0 +1,40 @@
+---
+title: OSEkit
+subtitle: Présentation de l'API
+format: 
+    revealjs:
+        incremental: true
+        transition: slide
+        theme: [default, theme.scss]
+        code-block-height: 650px
+filters:
+    - pyodide
+---
+
+# OSmOSE
+
+{{< include slides/osmose.qmd >}}
+
+# OSEkit
+
+{{< include slides/objectif.qmd >}}
+
+{{< include slides/utilisation_osekit.qmd >}}
+
+# Core API
+
+{{< include slides/core_API/presentation.qmd >}}
+
+{{< include slides/core_API/architecture.qmd >}}
+
+{{< include slides/SHOM/dataset.qmd >}}
+
+{{< include slides/SHOM/audio_data.qmd >}}
+
+{{< include slides/SHOM/spectro_data.qmd >}}
+
+{{< include slides/SHOM/ltas.qmd >}}
+
+{{< include slides/SHOM/using_examples.qmd >}}
+
+# Et voilà !
