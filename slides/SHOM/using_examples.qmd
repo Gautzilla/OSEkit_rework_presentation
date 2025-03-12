@@ -8,7 +8,7 @@
 
 ## Utilisation: segmentation { auto-animate=true  auto-animate-id="segmentation"}
 
-```{.python code-line-numbers="1,5-7"}
+```{.python code-line-numbers="2-4,8|1,5-7"}
 from pandas import Timestamp
 ads = AudioDataset.from_folder(
     folder=audio_folder, 
@@ -86,7 +86,7 @@ ads = AudioDataset.from_folder(
 ads.sample_rate = 48_000
 sft = ShortTimeFFT(
     win=hamming(1_024),
-    hop=round(1_024*(1-0.8)), 
+    hop=round(1_024*(1-0.5)), 
     fs=ads.sample_rate, 
     mfft=1_024
     )
