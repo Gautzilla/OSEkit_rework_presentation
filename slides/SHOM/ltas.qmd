@@ -26,8 +26,12 @@ ltas_sd = SpectroData.from_audio_data(ltas_data, ltas_sft)
 
 ## LTAS {auto-animate="true" auto-animate-id="ltas"}
 
-```{.python code-line-numbers="13"}
-ltas_data = AudioData.from_files(files=afs)
+```{.python code-line-numbers="17"}
+ltas_data = AudioDataset.from_folder(
+    folder=audio_folder, 
+    strptime_format="%y%m%d%H%M%S"
+    ).data[0]
+
 ltas_data.sample_rate = 48_000
 
 ltas_sft = ShortTimeFFT(
