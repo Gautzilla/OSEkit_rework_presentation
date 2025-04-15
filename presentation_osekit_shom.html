@@ -1370,6 +1370,42 @@
 <li class="fragment"><span class="primary">Calcul</span>/<span class="secondary">Export</span> de <strong>spectrogrammes</strong></li>
 </ul></li>
 </ul>
+</section>
+<section id="dataset-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Dataset</h2>
+<div class="sourceCode" id="cb22" data-code-line-numbers="1,4,10|1-2,4-6,10|1,4,7-8,10|1,4,9-10"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb22-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.public_api.dataset <span class="im">import</span> Dataset</span>
+<span id="cb22-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb22-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb22-4" class="hljs-ln-code"><a href=""></a>dataset <span class="op">=</span> Dataset(</span>
+<span id="cb22-5" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\small_dataset"</span>),</span>
+<span id="cb22-6" class="hljs-ln-code"><a href=""></a>    strptime_format <span class="op">=</span> <span class="vs">r"%y%m</span><span class="sc">%d</span><span class="vs">%H%M%S%z"</span>,</span>
+<span id="cb22-7" class="hljs-ln-code"><a href=""></a>    gps_coordinates <span class="op">=</span> (<span class="op">-</span><span class="fl">49.470961</span>, <span class="fl">70.094076</span>),</span>
+<span id="cb22-8" class="hljs-ln-code"><a href=""></a>    depth <span class="op">=</span> <span class="dv">200</span>,</span>
+<span id="cb22-9" class="hljs-ln-code"><a href=""></a>    timezone <span class="op">=</span> <span class="st">"UTC"</span></span>
+<span id="cb22-10" class="hljs-ln-code"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="dataset-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Dataset</h2>
+<div class="sourceCode" id="cb23" data-code-line-numbers="12"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb23-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.public_api.dataset <span class="im">import</span> Dataset</span>
+<span id="cb23-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb23-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb23-4" class="hljs-ln-code"><a href=""></a>dataset <span class="op">=</span> Dataset(</span>
+<span id="cb23-5" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\small_dataset"</span>),</span>
+<span id="cb23-6" class="hljs-ln-code"><a href=""></a>    strptime_format <span class="op">=</span> <span class="vs">r"%y%m</span><span class="sc">%d</span><span class="vs">%H%M%S%z"</span>,</span>
+<span id="cb23-7" class="hljs-ln-code"><a href=""></a>    gps_coordinates <span class="op">=</span> (<span class="op">-</span><span class="fl">49.470961</span>, <span class="fl">70.094076</span>),</span>
+<span id="cb23-8" class="hljs-ln-code"><a href=""></a>    depth <span class="op">=</span> <span class="dv">200</span>,</span>
+<span id="cb23-9" class="hljs-ln-code"><a href=""></a>    timezone <span class="op">=</span> <span class="st">"UTC"</span></span>
+<span id="cb23-10" class="hljs-ln-code"><a href=""></a>)</span>
+<span id="cb23-11" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb23-12" class="hljs-ln-code"><a href=""></a>dataset.build()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="font-size: 80%">
+<p><strong>Build</strong> d’un <strong>dataset</strong> :</p>
+<ul>
+<li class="fragment"><strong>Analyse</strong> les fichiers audio</li>
+<li class="fragment"><span class="primary">Trie</span> et <span class="secondary">organise</span> le dossier</li>
+<li class="fragment"><strong>Crée</strong> un <code>AudioDataset</code> des audios d’origine.</li>
+</ul>
+</div>
 </section></section>
 <section id="et-voilà" class="title-slide slide level1 center">
 <h1>Et voilà !</h1>

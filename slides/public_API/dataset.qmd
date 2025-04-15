@@ -11,3 +11,44 @@ Objet [principal]{.primary} de l'**API** :
     - [Calcul]{.primary}/[Export]{.secondary} de **spectres**
     - [Calcul]{.primary}/[Export]{.secondary} de **spectrogrammes**
 
+## Dataset {auto-animate=true}
+
+```{.python code-line-numbers="1,4,10|1-2,4-6,10|1,4,7-8,10|1,4,9-10"}
+from OSmOSE.public_api.dataset import Dataset
+from pathlib import Path
+
+dataset = Dataset(
+    folder = Path(r"C:\Users\berthoga\Documents\Datasets\small_dataset"),
+    strptime_format = r"%y%m%d%H%M%S%z",
+    gps_coordinates = (-49.470961, 70.094076),
+    depth = 200,
+    timezone = "UTC"
+)
+```
+
+## Dataset {auto-animate=true}
+
+```{.python code-line-numbers="12"}
+from OSmOSE.public_api.dataset import Dataset
+from pathlib import Path
+
+dataset = Dataset(
+    folder = Path(r"C:\Users\berthoga\Documents\Datasets\small_dataset"),
+    strptime_format = r"%y%m%d%H%M%S%z",
+    gps_coordinates = (-49.470961, 70.094076),
+    depth = 200,
+    timezone = "UTC"
+)
+
+dataset.build()
+```
+
+::: {style="font-size: 80%"}
+
+**Build** d'un **dataset** :
+
+- **Analyse** les fichiers audio
+- [Trie]{.primary} et [organise]{.secondary} le dossier
+- **Crée** un `AudioDataset` des audios d'origine.
+
+:::
