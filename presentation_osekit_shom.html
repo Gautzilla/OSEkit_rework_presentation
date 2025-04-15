@@ -929,7 +929,7 @@
 <span id="cb3-3" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> Timedelta</span>
 <span id="cb3-4" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb3-5" class="hljs-ln-code"><a href=""></a>ads <span class="op">=</span> AudioDataset.from_folder(</span>
-<span id="cb3-6" class="hljs-ln-code"><a href=""></a>    folder<span class="op">=</span>Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\example_dataset"</span>), </span>
+<span id="cb3-6" class="hljs-ln-code"><a href=""></a>    folder<span class="op">=</span>audio_folder, </span>
 <span id="cb3-7" class="hljs-ln-code"><a href=""></a>    strptime_format<span class="op">=</span><span class="st">"%y%m</span><span class="sc">%d</span><span class="st">%H%M%S"</span>,</span>
 <span id="cb3-8" class="hljs-ln-code"><a href=""></a>    data_duration<span class="op">=</span>Timedelta(seconds<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb3-9" class="hljs-ln-code"><a href=""></a>    )</span>
@@ -1338,6 +1338,20 @@
 <span id="cb21-21" class="hljs-ln-code"><a href=""></a>    )</span>
 <span id="cb21-22" class="hljs-ln-code"><a href=""></a>sds <span class="op">=</span> SpectroDataset.from_audio_dataset(ads, sft)</span>
 <span id="cb21-23" class="hljs-ln-code"><a href=""></a>sds.save_spectrogram(audio_folder <span class="op">/</span> <span class="st">"spectro"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="public-api" class="title-slide slide level1 center">
+<h1>Public API</h1>
+
+</section>
+<section id="objectifs-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Objectifs</h2>
+<p><strong>API</strong> de <em>haut-niveau</em> :</p>
+<ul>
+<li class="fragment">Pensée comme une <strong>application</strong></li>
+<li class="fragment">Exécute du code de la <strong>Core API</strong></li>
+<li class="fragment">Formate la donnée pour une utilisation sur <strong>APLOSE</strong></li>
+</ul>
 </section></section>
 <section id="et-voilà" class="title-slide slide level1 center">
 <h1>Et voilà !</h1>

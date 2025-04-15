@@ -1,0 +1,7 @@
+## Objectifs {auto-animate=true}
+
+**API** de *haut-niveau* :
+
+- Pensée comme une **application**
+- Exécute du code de la **Core API**
+- Formate la donnée pour une utilisation sur **APLOSE**

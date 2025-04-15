@@ -37,4 +37,8 @@ filters:
 
 {{< include slides/SHOM/using_examples.qmd >}}
 
+# Public API
+
+{{< include slides/public_API/presentation.qmd >}}
+
 # Et voilà !
