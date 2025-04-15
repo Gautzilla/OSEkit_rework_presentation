@@ -43,4 +43,6 @@ filters:
 
 {{< include slides/public_API/dataset.qmd >}}
 
+{{< include slides/public_API/analysis.qmd >}}
+
 # Et voilà !

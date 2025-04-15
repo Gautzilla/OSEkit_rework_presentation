@@ -1377,7 +1377,7 @@
 <span id="cb22-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb22-3" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb22-4" class="hljs-ln-code"><a href=""></a>dataset <span class="op">=</span> Dataset(</span>
-<span id="cb22-5" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\small_dataset"</span>),</span>
+<span id="cb22-5" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\dolphin_autograph"</span>),</span>
 <span id="cb22-6" class="hljs-ln-code"><a href=""></a>    strptime_format <span class="op">=</span> <span class="vs">r"%y%m</span><span class="sc">%d</span><span class="vs">%H%M%S%z"</span>,</span>
 <span id="cb22-7" class="hljs-ln-code"><a href=""></a>    gps_coordinates <span class="op">=</span> (<span class="op">-</span><span class="fl">49.470961</span>, <span class="fl">70.094076</span>),</span>
 <span id="cb22-8" class="hljs-ln-code"><a href=""></a>    depth <span class="op">=</span> <span class="dv">200</span>,</span>
@@ -1390,7 +1390,7 @@
 <span id="cb23-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb23-3" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb23-4" class="hljs-ln-code"><a href=""></a>dataset <span class="op">=</span> Dataset(</span>
-<span id="cb23-5" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\small_dataset"</span>),</span>
+<span id="cb23-5" class="hljs-ln-code"><a href=""></a>    folder <span class="op">=</span> Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\dolphin_autograph"</span>),</span>
 <span id="cb23-6" class="hljs-ln-code"><a href=""></a>    strptime_format <span class="op">=</span> <span class="vs">r"%y%m</span><span class="sc">%d</span><span class="vs">%H%M%S%z"</span>,</span>
 <span id="cb23-7" class="hljs-ln-code"><a href=""></a>    gps_coordinates <span class="op">=</span> (<span class="op">-</span><span class="fl">49.470961</span>, <span class="fl">70.094076</span>),</span>
 <span id="cb23-8" class="hljs-ln-code"><a href=""></a>    depth <span class="op">=</span> <span class="dv">200</span>,</span>
@@ -1406,6 +1406,62 @@
 <li class="fragment"><strong>Crée</strong> un <code>AudioDataset</code> des audios d’origine.</li>
 </ul>
 </div>
+</section>
+<section id="analysis" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Analysis</h2>
+<p>L’<strong>API</strong> contient un flag <code>Analysis</code>:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb24-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> OSmOSE.public_api.dataset <span class="im">import</span> Analysis</span>
+<span id="cb24-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb24-3" class="hljs-ln-code"><a href=""></a>analysis <span class="op">=</span> Analysis.AUDIO <span class="op">|</span> Analysis.MATRIX <span class="op">|</span> Analysis.SPECTROGRAM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>=&gt;</strong> Lorsque l’analyse est lancée, seuls les flags présents seront inclus :</p>
+<ul>
+<li class="fragment"><code>AUDIO</code> : <span class="primary">Exporte</span> l’<strong>audio reshapé</strong></li>
+<li class="fragment"><code>MATRIX</code> : <span class="primary">Calcule</span>/<span class="secondary">Exporte</span> les <strong>matrices du spectre</strong></li>
+<li class="fragment"><code>SPECTROGRAM</code> : <span class="primary">Calcule</span>/<span class="secondary">Exporte</span> les <strong>spectrogrammes</strong></li>
+</ul>
+</section>
+<section id="analysis-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Analysis</h2>
+<p>On a besoin d’une <code>ShortTimeFFT</code> si le flag contient une <strong>analyse spectrale</strong> :</p>
+<div class="sourceCode" id="cb25" data-code-line-numbers="1,9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb25-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> scipy.signal <span class="im">import</span> ShortTimeFFT</span>
+<span id="cb25-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> scipy.signal.windows <span class="im">import</span> hamming</span>
+<span id="cb25-3" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb25-4" class="hljs-ln-code"><a href=""></a>mfft <span class="op">=</span> <span class="dv">1_024</span></span>
+<span id="cb25-5" class="hljs-ln-code"><a href=""></a>win <span class="op">=</span> hamming(mfft)</span>
+<span id="cb25-6" class="hljs-ln-code"><a href=""></a>fs <span class="op">=</span> <span class="dv">48_000</span></span>
+<span id="cb25-7" class="hljs-ln-code"><a href=""></a>overlap <span class="op">=</span> <span class="fl">.5</span></span>
+<span id="cb25-8" class="hljs-ln-code"><a href=""></a>hop <span class="op">=</span> <span class="bu">round</span>(<span class="bu">len</span>(win)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>overlap))</span>
+<span id="cb25-9" class="hljs-ln-code"><a href=""></a>sft <span class="op">=</span> ShortTimeFFT(win<span class="op">=</span>win,hop<span class="op">=</span>hop,fs<span class="op">=</span>fs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analysis-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Analysis</h2>
+<p>Et on <strong>lance l’analyse</strong> :</p>
+<div class="sourceCode" id="cb26" data-code-line-numbers="3,4,11|1,3,5-9,11|3,10,11"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb26-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> Timestamp, Timedelta</span>
+<span id="cb26-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb26-3" class="hljs-ln-code"><a href=""></a>dataset.run_analysis(</span>
+<span id="cb26-4" class="hljs-ln-code"><a href=""></a>    analysis <span class="op">=</span> analysis,</span>
+<span id="cb26-5" class="hljs-ln-code"><a href=""></a>    begin <span class="op">=</span> Timestamp(<span class="st">"2022-09-25 17:30:00+0000"</span>),</span>
+<span id="cb26-6" class="hljs-ln-code"><a href=""></a>    end <span class="op">=</span> Timestamp(<span class="st">"2022-09-25 17:35:00+0000"</span>),</span>
+<span id="cb26-7" class="hljs-ln-code"><a href=""></a>    data_duration <span class="op">=</span> Timedelta(seconds <span class="op">=</span> <span class="dv">10</span>),</span>
+<span id="cb26-8" class="hljs-ln-code"><a href=""></a>    sample_rate <span class="op">=</span> fs,    </span>
+<span id="cb26-9" class="hljs-ln-code"><a href=""></a>    fft<span class="op">=</span>sft,</span>
+<span id="cb26-10" class="hljs-ln-code"><a href=""></a>    name <span class="op">=</span> <span class="st">"lf_full"</span></span>
+<span id="cb26-11" class="hljs-ln-code"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analysis-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Analysis</h2>
+<p>Autre example : <strong>spectrogrammes seuls</strong> :</p>
+<div class="sourceCode" id="cb27" data-code-line-numbers="3,4,11|1,3,5-9,11|3,10,11"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb27-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> pandas <span class="im">import</span> Timestamp, Timedelta</span>
+<span id="cb27-2" class="hljs-ln-code"><a href=""></a></span>
+<span id="cb27-3" class="hljs-ln-code"><a href=""></a>dataset.run_analysis(</span>
+<span id="cb27-4" class="hljs-ln-code"><a href=""></a>    analysis <span class="op">=</span> Analysis.SPECTROGRAM,</span>
+<span id="cb27-5" class="hljs-ln-code"><a href=""></a>    begin <span class="op">=</span> Timestamp(<span class="st">"2022-09-25 18:00:00+0000"</span>),</span>
+<span id="cb27-6" class="hljs-ln-code"><a href=""></a>    end <span class="op">=</span> Timestamp(<span class="st">"2022-09-25 18:01:00+0000"</span>),</span>
+<span id="cb27-7" class="hljs-ln-code"><a href=""></a>    data_duration <span class="op">=</span> Timedelta(seconds <span class="op">=</span> <span class="dv">10</span>),</span>
+<span id="cb27-8" class="hljs-ln-code"><a href=""></a>    sample_rate <span class="op">=</span> fs,    </span>
+<span id="cb27-9" class="hljs-ln-code"><a href=""></a>    fft<span class="op">=</span>sft,</span>
+<span id="cb27-10" class="hljs-ln-code"><a href=""></a>    name <span class="op">=</span> <span class="st">"spectro_only"</span></span>
+<span id="cb27-11" class="hljs-ln-code"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section id="et-voilà" class="title-slide slide level1 center">
 <h1>Et voilà !</h1>

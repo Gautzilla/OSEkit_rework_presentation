@@ -18,7 +18,7 @@ from OSmOSE.public_api.dataset import Dataset
 from pathlib import Path
 
 dataset = Dataset(
-    folder = Path(r"C:\Users\berthoga\Documents\Datasets\small_dataset"),
+    folder = Path(r"C:\Users\berthoga\Documents\Datasets\dolphin_autograph"),
     strptime_format = r"%y%m%d%H%M%S%z",
     gps_coordinates = (-49.470961, 70.094076),
     depth = 200,
@@ -33,7 +33,7 @@ from OSmOSE.public_api.dataset import Dataset
 from pathlib import Path
 
 dataset = Dataset(
-    folder = Path(r"C:\Users\berthoga\Documents\Datasets\small_dataset"),
+    folder = Path(r"C:\Users\berthoga\Documents\Datasets\dolphin_autograph"),
     strptime_format = r"%y%m%d%H%M%S%z",
     gps_coordinates = (-49.470961, 70.094076),
     depth = 200,
