@@ -1,0 +1,13 @@
+## ⚠️ Reset ⚠️
+
+**Danger Zone**, mais on peut [restaurer]{.primary} l'ensemble du **dataset** à son [état d'origine]{.secondary}
+
+. . .
+
+**=>** Toutes les analyses seront perdues !!
+
+. . .
+
+```{.python}
+dataset.reset()
+```

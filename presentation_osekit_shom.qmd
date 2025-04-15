@@ -1,5 +1,5 @@
 ---
-title: OSEkit
+title: 🐳OSEkit🐳
 subtitle: Présentation de l'API
 format: 
     revealjs:
@@ -11,17 +11,17 @@ filters:
     - pyodide
 ---
 
-# OSmOSE
+# 🦭OSmOSE
 
 {{< include slides/osmose.qmd >}}
 
-# OSEkit
+# 🐬OSEkit
 
 {{< include slides/objectif.qmd >}}
 
 {{< include slides/utilisation_osekit.qmd >}}
 
-# Core API
+# 🦈Core API
 
 {{< include slides/core_API/presentation.qmd >}}
 
@@ -37,7 +37,7 @@ filters:
 
 {{< include slides/SHOM/using_examples.qmd >}}
 
-# Public API
+# 🐠Public API
 
 {{< include slides/public_API/presentation.qmd >}}
 
@@ -47,4 +47,6 @@ filters:
 
 {{< include slides/public_API/loading.qmd >}}
 
-# Et voilà !
+{{< include slides/public_API/reset.qmd >}}
+
+# 🐳Et voilà🐳 {.center style="text-align: center;"}
