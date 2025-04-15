@@ -1,0 +1,13 @@
+## Dataset {auto-animate=true}
+
+Objet [principal]{.primary} de l'**API** :
+
+- Classe/Analyse la [donnée audio]{.primary} [originale]{.secondary}
+- Contient des **métadonnées**
+    - [Déploiement]{.primary} (GPS, timezone etc.)
+    - [Instrument]{.secondary} (Sensibilité, gains etc.)
+- Crée des [datasets d'analyse]{.primary} (**Core API**)
+    - [Découpage]{.primary}/[Rééchantillonnage]{.secondary} de l'**audio**
+    - [Calcul]{.primary}/[Export]{.secondary} de **spectres**
+    - [Calcul]{.primary}/[Export]{.secondary} de **spectrogrammes**
+

@@ -41,4 +41,6 @@ filters:
 
 {{< include slides/public_API/presentation.qmd >}}
 
+{{< include slides/public_API/dataset.qmd >}}
+
 # Et voilà !
