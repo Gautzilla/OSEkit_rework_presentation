@@ -1462,6 +1462,29 @@
 <span id="cb27-9" class="hljs-ln-code"><a href=""></a>    fft<span class="op">=</span>sft,</span>
 <span id="cb27-10" class="hljs-ln-code"><a href=""></a>    name <span class="op">=</span> <span class="st">"spectro_only"</span></span>
 <span id="cb27-11" class="hljs-ln-code"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="loading-a-dataset" class="slide level2">
+<h2>Loading a Dataset</h2>
+<p>Les datasets <strong>public</strong> et <strong>core</strong> sont <span class="primary">sérialisés</span> en fichiers <strong>JSON</strong>.</p>
+<div class="fragment">
+<p>Ils peuvent être <span class="secondary">déserialisés</span> dans l’<strong>API</strong> :</p>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="im">from</span> OSmOSE.public_api.dataset <span class="im">import</span> Dataset</span>
+<span id="cb28-2"><a href=""></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb28-3"><a href=""></a></span>
+<span id="cb28-4"><a href=""></a>dataset <span class="op">=</span> Dataset.from_json(</span>
+<span id="cb28-5"><a href=""></a>    <span class="bu">file</span><span class="op">=</span>Path(<span class="vs">r"C:\Users\berthoga\Documents\Datasets\dolphin_autograph\dataset.json"</span>)</span>
+<span id="cb28-6"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="font-size:60%">
+<p><strong>=&gt;</strong> Permet de :</p>
+<ul>
+<li class="fragment"><span class="primary">Charger</span> son travail sur <span class="secondary">plusieurs sessions</span></li>
+<li class="fragment"><span class="primary">Déléguer</span> des analyses sur des <span class="secondary">serveurs distants</span></li>
+<li class="fragment"><span class="primary">Communiquer</span> avec <span class="secondary">APLOSE</span></li>
+</ul>
+</div>
+</div>
 </section></section>
 <section id="et-voilà" class="title-slide slide level1 center">
 <h1>Et voilà !</h1>

@@ -45,4 +45,6 @@ filters:
 
 {{< include slides/public_API/analysis.qmd >}}
 
+{{< include slides/public_API/loading.qmd >}}
+
 # Et voilà !

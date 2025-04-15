@@ -1,0 +1,28 @@
+## Loading a Dataset
+
+Les datasets **public** et **core** sont [sérialisés]{.primary} en fichiers **JSON**.
+
+. . .
+
+Ils peuvent être [déserialisés]{.secondary} dans l'**API** :
+
+. . .
+
+```{.python}
+from OSmOSE.public_api.dataset import Dataset
+from pathlib import Path
+
+dataset = Dataset.from_json(
+    file=Path(r"C:\Users\berthoga\Documents\Datasets\dolphin_autograph\dataset.json")
+)
+```
+
+::: {style="font-size:60%"}
+
+**=>** Permet de :
+
+- [Charger]{.primary} son travail sur [plusieurs sessions]{.secondary}
+- [Déléguer]{.primary} des analyses sur des [serveurs distants]{.secondary}
+- [Communiquer]{.primary} avec [APLOSE]{.secondary}
+
+:::
