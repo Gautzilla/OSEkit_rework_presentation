@@ -93,7 +93,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="presentation_osekit_shom_files/libs/revealjs/dist/theme/quarto-31cd512efd8d8418f64bf349f73ab0cf.css">
+  <link rel="stylesheet" href="presentation_osekit_shom_files/libs/revealjs/dist/theme/quarto-2556a3f1dd83ac4bca99453f66f1d9f8.css">
   <link href="presentation_osekit_shom_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_osekit_shom_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_osekit_shom_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1332,7 +1332,7 @@
 <span id="cb21-15" class="hljs-ln-code"><a href=""></a>ads.sample_rate <span class="op">=</span> <span class="dv">48_000</span></span>
 <span id="cb21-16" class="hljs-ln-code"><a href=""></a>sft <span class="op">=</span> ShortTimeFFT(</span>
 <span id="cb21-17" class="hljs-ln-code"><a href=""></a>    win<span class="op">=</span>hamming(<span class="dv">1_024</span>),</span>
-<span id="cb21-18" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">1_024</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.8</span>)), </span>
+<span id="cb21-18" class="hljs-ln-code"><a href=""></a>    hop<span class="op">=</span><span class="bu">round</span>(<span class="dv">1_024</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.5</span>)), </span>
 <span id="cb21-19" class="hljs-ln-code"><a href=""></a>    fs<span class="op">=</span>ads.sample_rate, </span>
 <span id="cb21-20" class="hljs-ln-code"><a href=""></a>    mfft<span class="op">=</span><span class="dv">1_024</span></span>
 <span id="cb21-21" class="hljs-ln-code"><a href=""></a>    )</span>
